@@ -18,13 +18,12 @@ import {
 * Components
 */
 
-import Button from '../../library/Button/button';
 
 /**
 * Styles
 */
 
-import './theGameOfLife.scss';
+import './controller.scss';
 
 /**
 * Selectors
@@ -45,11 +44,10 @@ import * as Actions from '../../actions';
 import * as Utility from '../../utility';
 
 /**
- * TheGameOfLife component definition and export
+ * Controller component definition and export
  */
 
-export const TheGameOfLife = () => {
-
+export const Controller = () => {
 
     /**
     * Methods
@@ -62,7 +60,7 @@ export const TheGameOfLife = () => {
 
         return(
             <>
-                <div>HH</div>
+               
             </>
         );
     
@@ -79,5 +77,5 @@ export default connect(
             // moveCircleXCoordinate: bindActionCreators(Actions.moveCircleXCoordinate, dispatch),
         };
     }
-)(TheGameOfLife);
+)(Controller);
  

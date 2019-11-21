@@ -14,6 +14,10 @@ import {
     bindActionCreators
 } from 'redux';
 
+import {
+    useInterval
+} from '../../Hooks/useInterval';
+
 /**
 * Components
 */
@@ -24,7 +28,7 @@ import Button from '../../library/Button/button';
 * Styles
 */
 
-import './theGameOfLife.scss';
+import './playingArea.scss';
 
 /**
 * Selectors
@@ -45,10 +49,11 @@ import * as Actions from '../../actions';
 import * as Utility from '../../utility';
 
 /**
- * TheGameOfLife component definition and export
+ * PlayingArea component definition and export
  */
 
-export const TheGameOfLife = () => {
+export const PlayingArea = () => {
+
 
 
     /**
@@ -62,7 +67,6 @@ export const TheGameOfLife = () => {
 
         return(
             <>
-                <div>HH</div>
             </>
         );
     
@@ -79,5 +83,5 @@ export default connect(
             // moveCircleXCoordinate: bindActionCreators(Actions.moveCircleXCoordinate, dispatch),
         };
     }
-)(TheGameOfLife);
+)(PlayingArea);
  
