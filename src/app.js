@@ -14,7 +14,7 @@ import {
 * Components
 */
 
-import Counter from './components/Counter/counter';
+import TheGameOfLife from './components/TheGameOfLife/theGameOfLife';
 
 /**
 * Styles
@@ -38,7 +38,7 @@ export class App extends Component {
                <Route 
                   exact 
                   path="/"
-                  component={ Counter }
+                  component={ TheGameOfLife }
                />
             </div>
       );
