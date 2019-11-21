@@ -6,6 +6,32 @@
     width: 100%;
     height: 105px;
     .controller-moves {
-        
+        margin: 0 50px 0 50px;
     }
+    .controler-wrapper {
+        margin: 0 20px 0 20px;
+    }
+}
+input {
+    margin: 0 10px 0 10px;
+}
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    background: rgb(90, 129, 106);
+    border: 1px solid rgb(40, 61, 23);
+    height: 7px;
+    border-radius: 5px;
+    margin-top: 7px;
+  }
+  
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #382b18;
+    height: 20px;
+    width: 10px;
+    border-radius: 3px;
+    background: rgb(97, 179, 77);
+    cursor: pointer;
+    margin-bottom: 2px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
 }

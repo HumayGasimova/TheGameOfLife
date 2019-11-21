@@ -84,34 +84,39 @@ export const Controller = () => {
                     // chosenListDropdown={this.props.chosenListDropdown[0]}
                 />
                 <Button
-                    className="investments-button"
+                    className="controller-button"
                     // onClick={this.props.startInvestmentsWithdraw}
                     text={"Next"}
                 />
                 <Button
-                    className="investments-button"
+                    className="controller-button"
                     // onClick={this.props.startInvestmentsWithdraw}
                     text={"Start"}
                 />
                 <div className="controller-moves">0</div>
-                <FontAwesomeIcon icon={faTachometerAlt} size="lg"/>
-                <input 
-                    type="range" 
-                    // value={this.props.sizeEraser} 
-                    min="1" 
-                    max ="50" 
-                    // onChange={()=>this.onEraserSizeChange(event)}
-                />
-                <FontAwesomeIcon icon={faThLarge} size="lg"/>
-                <input 
-                    type="range" 
-                    // value={this.props.sizeEraser} 
-                    min="1" 
-                    max ="50" 
-                    // onChange={()=>this.onEraserSizeChange(event)}
-                />
+                <div className="controler-wrapper">
+                    <FontAwesomeIcon icon={faTachometerAlt} size="lg"/>
+                    <input 
+                        type="range" 
+                        // value={this.props.sizeEraser} 
+                        min="1" 
+                        max ="11" 
+                        // onChange={()=>this.onEraserSizeChange(event)}
+                    />
+                </div>
+                <div className="controler-wrapper">
+                    <FontAwesomeIcon icon={faThLarge} size="lg"/>
+                    <input 
+                        type="range" 
+                        // value={this.props.sizeEraser} 
+                        min="1" 
+                        max ="10" 
+                        // onChange={()=>this.onEraserSizeChange(event)}
+                    />
+                </div>
+              
                 <Button
-                    className="investments-button"
+                    className="controller-button"
                     // onClick={this.props.startInvestmentsWithdraw}
                     text={"Info"}
                 />
