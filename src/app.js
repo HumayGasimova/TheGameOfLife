@@ -14,7 +14,7 @@ import {
 * Components
 */
 
-import MovingBalls from './components/MovingBalls/movingBalls';
+import Counter from './components/Counter/counter';
 
 /**
 * Styles
@@ -38,7 +38,7 @@ export class App extends Component {
                <Route 
                   exact 
                   path="/"
-                  component={ MovingBalls }
+                  component={ Counter }
                />
             </div>
       );
