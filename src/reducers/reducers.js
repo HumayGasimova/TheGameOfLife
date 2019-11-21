@@ -5,9 +5,9 @@ import {
      connectRouter 
 } from 'connected-react-router';
 
-import movingBallsReducer from './movingBallsReducer';
+import theGameOfLifeReducer from './theGameOfLifeReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
-    movingBalls: movingBallsReducer
+    theGameOfLife: theGameOfLifeReducer
 });

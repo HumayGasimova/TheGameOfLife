@@ -18,6 +18,7 @@ import {
 * Components
 */
 
+import Dropdown from '../../../library/Dropdown/dropdown'
 
 /**
 * Styles
@@ -60,7 +61,17 @@ export const Controller = () => {
 
         return(
             <div className="controller">
-               
+                <Dropdown 
+                    list={["1", "2", "3"]}
+                    dropdownClassName={"dropdown-controller"}
+                    dropdownTopClassName={"dropdown-top-controller"}
+                    dropdownTopActiveClassName={"dropdown-top-active-controller"}
+                    dropdownBottomClassName={"dropdown-bottom-controller"}
+                    dropdownTopTextClassName={"dropdown-top-text-controller"}
+                    // toggleDropdown={this.props.toggleDropdownInvestments}
+                    // showDropdown={this.props.showDropdownInvestments}
+                    // chosenListDropdown={this.props.chosenListDropdown[0]}
+                />
             </div>
         );
     

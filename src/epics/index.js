@@ -1,1 +1,1 @@
-export { fillCirclesArrayEpic } from './fillCirclesArrayEpic';
+export { chooseFromDropdownEpic } from './chooseFromDropdownEpic';
