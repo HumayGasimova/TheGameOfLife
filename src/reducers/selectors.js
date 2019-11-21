@@ -1,15 +1,10 @@
 import { createSelector } from 'reselect';
 
-const getCircles = (state) => state.movingBalls.circles;
+const getCells = (state) => state.theGameOfLife.cells;
 
-export const getCirclesState = createSelector(
-    [getCircles],
+export const getCellsState = createSelector(
+    [getCells],
     (x) => x
 );
 
-const getNumberOfBalls = (state) => state.movingBalls.numberOfBalls;
 
-export const getNumberOfBallsState = createSelector(
-    [getNumberOfBalls],
-    (x) => x
-);

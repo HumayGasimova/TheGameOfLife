@@ -1,5 +1,8 @@
 .playingArea {
-    border: 2px solid blue;
     width: 1500px;
     height: 520px;
+    .playingArea-cells{
+        display: flex;
+        flex-wrap: wrap;
+    }
 }

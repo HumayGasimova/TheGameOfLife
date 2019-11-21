@@ -6,3 +6,11 @@ export function chooseFromDropdown(chosen) {
         chosen: chosen
     };
 };
+
+export function updateNumberOfCells(number) {
+    return { 
+        type: actionTypes.UPDATE_NUMBER_OF_CELLS,
+        number: number
+    };
+};
+

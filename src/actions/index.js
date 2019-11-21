@@ -1,3 +1,4 @@
 export {
-    chooseFromDropdown
+    chooseFromDropdown,
+    updateNumberOfCells
 } from './theGameOfLifeActions';

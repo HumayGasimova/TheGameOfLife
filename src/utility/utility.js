@@ -18,7 +18,7 @@ export const getRandomRadius = () => {
     return  (Math.random() * 99) + 1;
 } 
 
-export const getArrayOfCircles = (val) => {
+export const getArrayOfCells = (val) => {
     let array = new Array(val).fill(0);
     // array.map((el,i) => array[i] = i+1)
     return array;

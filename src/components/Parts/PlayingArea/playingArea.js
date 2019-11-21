@@ -3,7 +3,8 @@
 */
 
 import React,{
-    useState
+    useState,
+    useEffect
 } from 'react';
  
 import {
@@ -17,7 +18,7 @@ import {
 /**
 * Components
 */
-
+import Cell from '../../SmallParts/Cell/cell';
 /**
 * Styles
 */
@@ -46,14 +47,28 @@ import * as Utility from '../../../utility';
  * PlayingArea component definition and export
  */
 
-export const PlayingArea = () => {
-
-
+export const PlayingArea = (props) => {
 
     /**
     * Methods
     */ 
 
+    const renderCells = () => {
+        return(
+            <div className="playingArea-cells">{props.cells.map((el,i)=>{
+                return(
+                    <div key={i}>
+                        <Cell/>
+                    </div>
+                )
+            })
+
+            }</div>
+        )
+    }
+    useEffect(()=>{
+        props.updateNumberOfCells(5500);
+    },[])
 
     /**
     * Markup
@@ -61,6 +76,7 @@ export const PlayingArea = () => {
 
         return(
             <div className="playingArea">
+                {renderCells()}
             </div>
         );
     
@@ -69,12 +85,12 @@ export const PlayingArea = () => {
 export default connect(
     (state) => {
         return {
-            // circles: Selectors.getCirclesState(state),
+            cells: Selectors.getCellsState(state),
         };
     },
     (dispatch) => {
         return {
-            // moveCircleXCoordinate: bindActionCreators(Actions.moveCircleXCoordinate, dispatch),
+            updateNumberOfCells: bindActionCreators(Actions.updateNumberOfCells, dispatch),
         };
     }
 )(PlayingArea);
