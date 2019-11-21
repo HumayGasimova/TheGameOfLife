@@ -14,15 +14,9 @@ import {
     bindActionCreators
 } from 'redux';
 
-import {
-    useInterval
-} from '../../Hooks/useInterval';
-
 /**
 * Components
 */
-
-import Button from '../../library/Button/button';
 
 /**
 * Styles
@@ -34,19 +28,19 @@ import './playingArea.scss';
 * Selectors
 */
 
-import * as Selectors from '../../reducers/selectors';
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Actions
 */
 
-import * as Actions from '../../actions';
+import * as Actions from '../../../actions';
 
 /**
 * Utility
 */
 
-import * as Utility from '../../utility';
+import * as Utility from '../../../utility';
 
 /**
  * PlayingArea component definition and export
@@ -66,8 +60,8 @@ export const PlayingArea = () => {
     */
 
         return(
-            <>
-            </>
+            <div className="playingArea">
+            </div>
         );
     
 }

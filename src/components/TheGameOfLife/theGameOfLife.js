@@ -18,7 +18,9 @@ import {
 * Components
 */
 
-import Button from '../../library/Button/button';
+import Header from '../../components/Parts/Header/header';
+import PlayingArea from '../../components/Parts/PlayingArea/playingArea';
+import Controller from '../../components/Parts/Controller/controller';
 
 /**
 * Styles
@@ -61,9 +63,11 @@ export const TheGameOfLife = () => {
     */
 
         return(
-            <>
-                <div>HH</div>
-            </>
+            <div className="theGameOfLife">
+                <Header/>
+                <PlayingArea/>
+                <Controller/>
+            </div>
         );
     
 }

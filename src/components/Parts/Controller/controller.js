@@ -29,19 +29,19 @@ import './controller.scss';
 * Selectors
 */
 
-import * as Selectors from '../../reducers/selectors';
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Actions
 */
 
-import * as Actions from '../../actions';
+import * as Actions from '../../../actions';
 
 /**
 * Utility
 */
 
-import * as Utility from '../../utility';
+import * as Utility from '../../../utility';
 
 /**
  * Controller component definition and export
@@ -59,9 +59,9 @@ export const Controller = () => {
     */
 
         return(
-            <>
+            <div className="controller">
                
-            </>
+            </div>
         );
     
 }
