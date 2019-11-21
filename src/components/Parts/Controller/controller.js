@@ -14,11 +14,22 @@ import {
     bindActionCreators
 } from 'redux';
 
+import { 
+    FontAwesomeIcon 
+} from '@fortawesome/react-fontawesome';
+
+import { 
+    faTachometerAlt,
+    faThLarge,
+
+} from '@fortawesome/free-solid-svg-icons'
+
 /**
 * Components
 */
 
-import Dropdown from '../../../library/Dropdown/dropdown'
+import Dropdown from '../../../library/Dropdown/dropdown';
+import Button from '../../../library/Button/button';
 
 /**
 * Styles
@@ -71,6 +82,38 @@ export const Controller = () => {
                     // toggleDropdown={this.props.toggleDropdownInvestments}
                     // showDropdown={this.props.showDropdownInvestments}
                     // chosenListDropdown={this.props.chosenListDropdown[0]}
+                />
+                <Button
+                    className="investments-button"
+                    // onClick={this.props.startInvestmentsWithdraw}
+                    text={"Next"}
+                />
+                <Button
+                    className="investments-button"
+                    // onClick={this.props.startInvestmentsWithdraw}
+                    text={"Start"}
+                />
+                <div className="controller-moves">0</div>
+                <FontAwesomeIcon icon={faTachometerAlt} size="lg"/>
+                <input 
+                    type="range" 
+                    // value={this.props.sizeEraser} 
+                    min="1" 
+                    max ="50" 
+                    // onChange={()=>this.onEraserSizeChange(event)}
+                />
+                <FontAwesomeIcon icon={faThLarge} size="lg"/>
+                <input 
+                    type="range" 
+                    // value={this.props.sizeEraser} 
+                    min="1" 
+                    max ="50" 
+                    // onChange={()=>this.onEraserSizeChange(event)}
+                />
+                <Button
+                    className="investments-button"
+                    // onClick={this.props.startInvestmentsWithdraw}
+                    text={"Info"}
                 />
             </div>
         );
