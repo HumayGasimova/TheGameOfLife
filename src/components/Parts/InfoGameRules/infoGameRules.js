@@ -24,6 +24,7 @@ import {
 */
 
 import Backdrop from '../../../library/Backdrop/backdrop';
+import Button from '../../../library/Button/button';
 
 /**
 * Styles
@@ -88,6 +89,12 @@ export const InfoGameRules = (props) => {
                     <div>Choose a figure from the pull-down menu or make one yourself by clicking on the cells with a mouse. A new generation of cells (corresponding to one iteration of the</div>
                     <div>rules) is initiated by the 'Next' button. The 'Start' button advances the game by several generations. Game speed is regulated by the speed dial and the size of the cells</div>
                     <div>with the size dial.</div><br/>
+                    <Button
+                        className={"infoGameRules-button"}
+                        onClick={props.toggleBackdrop}
+                        text={"Close"}
+                    />
+                    <br/>
                 </div> 
                 <Backdrop show={true} onClick={props.toggleBackdrop}/>
             </div> 
