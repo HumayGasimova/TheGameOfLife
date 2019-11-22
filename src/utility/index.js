@@ -7,5 +7,6 @@ export {
     getArrayOfCells,
     getRandomColor,
     getRandomAlfa,
-    getUpdatedArrayOfCellsTopLine
+    getUpdatedArrayOfCellsTopLine,
+    getUpdatedArrayOfCellsBottomLine
 } from './utility';

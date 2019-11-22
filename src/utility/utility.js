@@ -35,6 +35,7 @@ export const getRandomAlfa = () => {
 export const getUpdatedArrayOfCellsTopLine = (array, i) => {
     let arrayOfCells = array;
     let arrayOfLiveCells = [];
+    let cell;
     if(arrayOfCells[i - 1].alive === true){
         arrayOfLiveCells.push(1)
     }
@@ -52,6 +53,39 @@ export const getUpdatedArrayOfCellsTopLine = (array, i) => {
     }
     if(arrayOfCells[i].alive === true){
         if(arrayOfLiveCells.length === 1 || arrayOfLiveCells.length === 4 || array.length === 5){
+            cell = {...arrayOfCells[i], alive: false}
+            arrayOfCells.splice(i,1,cell)
+        }
+    }
+
+    if(arrayOfCells[i].alive === false && arrayOfLiveCells.length === 3){
+        cell = {...arrayOfCells[i], alive: true}
+        arrayOfCells.splice(i,1,cell)
+    }
+    
+    return  arrayOfCells;
+} 
+
+export const getUpdatedArrayOfCellsBottomLine = (array, i) => {
+    let arrayOfCells = array;
+    let arrayOfLiveCells = [];
+    if(arrayOfCells[i - 1].alive === true){
+        arrayOfLiveCells.push(1)
+    }
+    if(arrayOfCells[i + 1].alive === true){
+        arrayOfLiveCells.push(1)
+    }
+    if(arrayOfCells[i - 211].alive === true){
+        arrayOfLiveCells.push(1)
+    }
+    if(arrayOfCells[i - 212].alive === true){
+        arrayOfLiveCells.push(1)
+    }
+    if(arrayOfCells[i - 213].alive === true){
+        arrayOfLiveCells.push(1)
+    }
+    if(arrayOfCells[i].alive === true){
+        if(arrayOfLiveCells.length === 1 || arrayOfLiveCells.length === 4 || array.length === 5){
             arrayOfCells[i].alive = false
         }
     }
@@ -61,6 +95,8 @@ export const getUpdatedArrayOfCellsTopLine = (array, i) => {
             arrayOfCells[i].alive = true
         }
     }
+
+    // arrayOfCells.splice(i,1,arrayOfCells[i])
     
     return  arrayOfCells;
 } 

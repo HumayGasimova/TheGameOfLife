@@ -36,7 +36,7 @@ export const onNextHandlerEpic = (action$, state$) =>
         ofType(actionTypes.ON_NEXT_HANDLER),
         mergeMap(action => {
             let arrayOfCells = [...state$.value.theGameOfLife.cells];
-            
+            let copyOfArray = [...arrayOfCells];
                 // top-left corner
                 if(arrayOfCells[0].alive === true && arrayOfCells[1].alive === true && arrayOfCells[212].alive === false && arrayOfCells[213].alive === false ||
                     arrayOfCells[0].alive === true && arrayOfCells[212].alive === true && arrayOfCells[1].alive === false && arrayOfCells[213].alive === false ||
@@ -91,8 +91,12 @@ export const onNextHandlerEpic = (action$, state$) =>
 
                 // top line 
                 arrayOfCells.map((el,i)=>{
+                    
                     if(i > 0 && i < 212){
-                        arrayOfCells = Utility.getUpdatedArrayOfCellsTopLine(arrayOfCells, i)
+                        arrayOfCells = Utility.getUpdatedArrayOfCellsTopLine(copyOfArray, i)
+                    }
+                    if(i > 15052 && i < 15263){
+                        arrayOfCells = Utility.getUpdatedArrayOfCellsBottomLine(copyOfArray, i)
                     }
                 })
             
