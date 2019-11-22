@@ -65,15 +65,28 @@ export const onNextHandlerEpic = (action$, state$) =>
 
                 // bottom-left corner
                 if(arrayOfCells[15052].alive === true && arrayOfCells[14840].alive === true && arrayOfCells[14841].alive === false && arrayOfCells[15053].alive === false ||
-                arrayOfCells[15052].alive === true && arrayOfCells[14841].alive === true && arrayOfCells[14840].alive === false && arrayOfCells[15053].alive === false ||
-                arrayOfCells[15052].alive === true && arrayOfCells[15053].alive === true && arrayOfCells[14840].alive === false && arrayOfCells[14841].alive === false ||
-                arrayOfCells[15052].alive === true && arrayOfCells[14840].alive === false && arrayOfCells[14841].alive === false && arrayOfCells[15053].alive === false
+                    arrayOfCells[15052].alive === true && arrayOfCells[14841].alive === true && arrayOfCells[14840].alive === false && arrayOfCells[15053].alive === false ||
+                    arrayOfCells[15052].alive === true && arrayOfCells[15053].alive === true && arrayOfCells[14840].alive === false && arrayOfCells[14841].alive === false ||
+                    arrayOfCells[15052].alive === true && arrayOfCells[14840].alive === false && arrayOfCells[14841].alive === false && arrayOfCells[15053].alive === false
                 ){
                     arrayOfCells.splice(15052, 1,{...arrayOfCells[15052], alive: false});
                 }
                 if(arrayOfCells[15052].alive === false && arrayOfCells[14840].alive === true && arrayOfCells[14841].alive === true && arrayOfCells[15053].alive === true
                 ){
                     arrayOfCells.splice(15052, 1, {...arrayOfCells[15052], alive: true});
+                }
+
+                // bottom-right corner
+                if(arrayOfCells[15263].alive === true && arrayOfCells[15050].alive === true && arrayOfCells[15051].alive === false && arrayOfCells[15262].alive === false ||
+                    arrayOfCells[15263].alive === true && arrayOfCells[15051].alive === true && arrayOfCells[15050].alive === false && arrayOfCells[15262].alive === false ||
+                    arrayOfCells[15263].alive === true && arrayOfCells[15262].alive === true && arrayOfCells[15050].alive === false && arrayOfCells[15051].alive === false ||
+                    arrayOfCells[15263].alive === true && arrayOfCells[15050].alive === false && arrayOfCells[15051].alive === false && arrayOfCells[15262].alive === false
+                ){
+                    arrayOfCells.splice(15263, 1,{...arrayOfCells[15263], alive: false});
+                }
+                if(arrayOfCells[15263].alive === false && arrayOfCells[15050].alive === true && arrayOfCells[15051].alive === true && arrayOfCells[15262].alive === true
+                ){
+                    arrayOfCells.splice(15263, 1, {...arrayOfCells[15263], alive: true});
                 }
 
                 // if(arrayOfCells[212].alive === true ){
