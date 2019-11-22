@@ -37,16 +37,14 @@ export const onNextHandlerEpic = (action$, state$) =>
         mergeMap(action => {
             let arrayOfCells = [...state$.value.theGameOfLife.cells];
             let cell;
-
-            
-                if(arrayOfCells[0].alive === true && arrayOfCells[1].alive === true ||
-                    arrayOfCells[0].alive === true && arrayOfCells[213].alive === true ||
-                    arrayOfCells[0].alive === true && arrayOfCells[214].alive === true
+                if(arrayOfCells[0].alive === true && arrayOfCells[1].alive === true && arrayOfCells[212].alive === false && arrayOfCells[213].alive === false ||
+                    arrayOfCells[0].alive === true && arrayOfCells[212].alive === true && arrayOfCells[1].alive === false && arrayOfCells[213].alive === false ||
+                    arrayOfCells[0].alive === true && arrayOfCells[213].alive === true && arrayOfCells[212].alive === false && arrayOfCells[1].alive === false 
                 ){
                     cell = {...arrayOfCells[0], alive: false}
-                    arrayOfCells.splice(0, 1, cell);
+                    arrayOfCells.splice(0, 1,cell );
                 }
-                if(arrayOfCells[0].alive === false && arrayOfCells[1].alive === true && arrayOfCells[213].alive === true && arrayOfCells[214].alive === true
+                if(arrayOfCells[0].alive === false && arrayOfCells[1].alive === true && arrayOfCells[212].alive === true && arrayOfCells[213].alive === true
                 ){
                     cell = {...arrayOfCells[0], alive: true}
                     arrayOfCells.splice(0, 1, cell);
