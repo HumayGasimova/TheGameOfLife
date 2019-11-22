@@ -83,7 +83,11 @@ export const PlayingArea = (props) => {
 
     useEffect(()=>{
         props.gameInitialization();
-        // props.updateNumberOfCells(20500);
+        props.makeTheCellAlive(4728);
+        props.makeTheCellAlive(4941);
+        props.makeTheCellAlive(5153);
+        props.makeTheCellAlive(5152);
+        props.makeTheCellAlive(5151);
     },[])
 
     /**

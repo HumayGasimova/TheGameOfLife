@@ -5,5 +5,5 @@ export {
     updateMapInteractionCSS,
     startZooming,
     gameInitialization,
-    makeTheCellAlive
+    makeTheCellAlive,
 } from './theGameOfLifeActions';

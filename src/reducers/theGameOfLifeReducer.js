@@ -81,6 +81,9 @@ const makeTheCellAlive = (state, action) => {
     });
 }
 
+
+
+
 const theGameOfLife = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHOOSE_FROM_DROPDOWN:
