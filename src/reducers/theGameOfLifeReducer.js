@@ -71,14 +71,11 @@ const updateMapInteractionCSS = (state, action) => {
 
 const makeTheCellAlive = (state, action) => {
     let updatedCells = [...state.cells];
-    console.log('updatedCells', updatedCells)
-    let cell = updatedCells.find(x => x.id === action.id);
-    console.log('cell', cell)
-    let cellsIndex = updatedCells.findIndex(x=> x.id === action.id);
+    let index = action.id - 1;
+    let cell = updatedCells[index];
     cell = {...cell, alive: !cell.alive};
-    console.log('cell2', cell)
     
-    updatedCells.splice(cellsIndex, 1, cell)
+    updatedCells.splice(index, 1, cell)
     return updateObject(state, {
         cells: updatedCells
     });

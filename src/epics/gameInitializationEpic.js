@@ -36,7 +36,7 @@ export const gameInitializationEpic = (action$) =>
         ofType(actionTypes.GAME_INITIALIZATION),
         mergeMap(action => {
             let arrayOfCells = Utility.getArrayOfCells(20500);
-
+            // let arrayOfCells = Utility.getArrayOfCells(8786);
             arrayOfCells.map((el,i)=>{
                 arrayOfCells[i]={
                     id: i + 1,
