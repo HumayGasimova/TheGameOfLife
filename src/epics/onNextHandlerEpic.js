@@ -36,18 +36,29 @@ export const onNextHandlerEpic = (action$, state$) =>
         ofType(actionTypes.ON_NEXT_HANDLER),
         mergeMap(action => {
             let arrayOfCells = [...state$.value.theGameOfLife.cells];
-            let cell;
+            
                 if(arrayOfCells[0].alive === true && arrayOfCells[1].alive === true && arrayOfCells[212].alive === false && arrayOfCells[213].alive === false ||
                     arrayOfCells[0].alive === true && arrayOfCells[212].alive === true && arrayOfCells[1].alive === false && arrayOfCells[213].alive === false ||
-                    arrayOfCells[0].alive === true && arrayOfCells[213].alive === true && arrayOfCells[212].alive === false && arrayOfCells[1].alive === false 
+                    arrayOfCells[0].alive === true && arrayOfCells[213].alive === true && arrayOfCells[212].alive === false && arrayOfCells[1].alive === false ||
+                    arrayOfCells[0].alive === true && arrayOfCells[1].alive === false && arrayOfCells[212].alive === false && arrayOfCells[213].alive === false
                 ){
-                    cell = {...arrayOfCells[0], alive: false}
-                    arrayOfCells.splice(0, 1,cell );
+                    arrayOfCells.splice(0, 1,{...arrayOfCells[0], alive: false});
                 }
                 if(arrayOfCells[0].alive === false && arrayOfCells[1].alive === true && arrayOfCells[212].alive === true && arrayOfCells[213].alive === true
                 ){
-                    cell = {...arrayOfCells[0], alive: true}
-                    arrayOfCells.splice(0, 1, cell);
+                    arrayOfCells.splice(0, 1, {...arrayOfCells[0], alive: true});
+                }
+
+                if(arrayOfCells[211].alive === true && arrayOfCells[210].alive === true && arrayOfCells[422].alive === false && arrayOfCells[423].alive === false ||
+                    arrayOfCells[211].alive === true && arrayOfCells[422].alive === true && arrayOfCells[210].alive === false && arrayOfCells[423].alive === false ||
+                    arrayOfCells[211].alive === true && arrayOfCells[423].alive === true && arrayOfCells[210].alive === false && arrayOfCells[422].alive === false ||
+                    arrayOfCells[211].alive === true && arrayOfCells[210].alive === false && arrayOfCells[422].alive === false && arrayOfCells[423].alive === false
+                ){
+                    arrayOfCells.splice(211, 1,{...arrayOfCells[211], alive: false});
+                }
+                if(arrayOfCells[211].alive === false && arrayOfCells[210].alive === true && arrayOfCells[422].alive === true && arrayOfCells[423].alive === true
+                ){
+                    arrayOfCells.splice(211, 1, {...arrayOfCells[211], alive: true});
                 }
 
                 // if(arrayOfCells[212].alive === true ){
