@@ -117,7 +117,7 @@ export const Controller = (props) => {
                         type="range" 
                         value={props.zoom} 
                         min="1" 
-                        max ="10" 
+                        max ="5" 
                         onChange={()=>props.startZooming(event)}
                     />
                 </div>

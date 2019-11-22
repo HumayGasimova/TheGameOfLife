@@ -75,7 +75,7 @@ export const PlayingArea = (props) => {
     }
 
     useEffect(()=>{
-        props.updateNumberOfCells(5500);
+        props.updateNumberOfCells(20500);
     },[])
     
     // const mapInteractionCSSOnChange = (obj, zoom) => {

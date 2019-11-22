@@ -47,47 +47,22 @@ const updateMapInteractionCSS = (state, action) => {
             });
         case '2':
             return updateObject(state, {
-                scale: 0,
+                scale: 0.9,
                 translation: { x: 1, y: 1 }
             });
         case '3':
             return updateObject(state, {
-                scale: 3,
+                scale: 0.8,
                 translation: { x: 1, y: 1 }
             });
         case '4':
             return updateObject(state, {
-                scale: 4,
+                scale: 0.7,
                 translation: { x: 1, y: 1 }
             });
         case '5':
             return updateObject(state, {
-                scale: 5,
-                translation: { x: 1, y: 1 }
-            });
-        case '6':
-            return updateObject(state, {
-                scale: 6,
-                translation: { x: 1, y: 1 }
-            });
-        case '7':
-            return updateObject(state, {
-                scale: 7,
-                translation: { x: 1, y: 1 }
-            });
-        case '8':
-            return updateObject(state, {
-                scale: 1,
-                translation: { x: 1, y: 1 }
-            });
-        case '9':
-            return updateObject(state, {
-                scale: 1,
-                translation: { x: 1, y: 1 }
-            });
-        case '10':
-            return updateObject(state, {
-                scale: 1,
+                scale: 0.6,
                 translation: { x: 1, y: 1 }
             });
         default:
