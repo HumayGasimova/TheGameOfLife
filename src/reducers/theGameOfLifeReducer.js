@@ -20,7 +20,9 @@ import * as Utility from '../utility';
 
 export const initialState = {
     cells: [],
-    zoom: 1
+    zoom: 1,
+    scale: 1,
+    translation: { x: 1, y: 1 }
 }
 
 const updateNumberOfCells = (state, action) => {
