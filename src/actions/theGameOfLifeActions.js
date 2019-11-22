@@ -14,3 +14,10 @@ export function updateNumberOfCells(number) {
     };
 };
 
+export function updateZoom(val) {
+    return { 
+        type: actionTypes.UPDATE_ZOOM,
+        val: val
+    };
+};
+

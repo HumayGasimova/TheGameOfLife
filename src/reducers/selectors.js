@@ -7,4 +7,9 @@ export const getCellsState = createSelector(
     (x) => x
 );
 
+const getZoom = (state) => state.theGameOfLife.zoom;
 
+export const getZoomState = createSelector(
+    [getZoom],
+    (x) => x
+);

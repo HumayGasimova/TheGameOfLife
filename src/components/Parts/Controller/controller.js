@@ -54,17 +54,21 @@ import * as Actions from '../../../actions';
 */
 
 import * as Utility from '../../../utility';
+import { tsPropertySignature } from '@babel/types';
 
 /**
  * Controller component definition and export
  */
 
-export const Controller = () => {
+export const Controller = (props) => {
 
     /**
     * Methods
     */ 
 
+    const onZoomChange = (e) => {
+        props.updateZoom(e.target.value)
+    }
 
     /**
     * Markup
@@ -110,10 +114,10 @@ export const Controller = () => {
                     <FontAwesomeIcon icon={faThLarge} size="lg"/>
                     <input 
                         type="range" 
-                        // value={this.props.sizeEraser} 
+                        value={props.zoom} 
                         min="1" 
                         max ="10" 
-                        // onChange={()=>this.onEraserSizeChange(event)}
+                        onChange={()=>onZoomChange(event)}
                     />
                 </div>
               
@@ -130,12 +134,12 @@ export const Controller = () => {
 export default connect(
     (state) => {
         return {
-            // circles: Selectors.getCirclesState(state),
+            zoom: Selectors.getZoomState(state),
         };
     },
     (dispatch) => {
         return {
-            // moveCircleXCoordinate: bindActionCreators(Actions.moveCircleXCoordinate, dispatch),
+            updateZoom: bindActionCreators(Actions.updateZoom, dispatch),
         };
     }
 )(Controller);

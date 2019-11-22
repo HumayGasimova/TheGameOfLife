@@ -15,6 +15,8 @@ import {
     bindActionCreators
 } from 'redux';
 
+import { MapInteractionCSS } from 'react-map-interaction';
+
 /**
 * Components
 */
@@ -49,6 +51,8 @@ import * as Utility from '../../../utility';
 
 export const PlayingArea = (props) => {
 
+    // const [scale, setScale] = useState(1);
+
     /**
     * Methods
     */ 
@@ -69,7 +73,7 @@ export const PlayingArea = (props) => {
     useEffect(()=>{
         props.updateNumberOfCells(5500);
     },[])
-
+  
     /**
     * Markup
     */

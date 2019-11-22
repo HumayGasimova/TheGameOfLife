@@ -20,6 +20,7 @@ import * as Utility from '../utility';
 
 export const initialState = {
     cells: [],
+    zoom: 1
 }
 
 const updateNumberOfCells = (state, action) => {
@@ -29,6 +30,11 @@ const updateNumberOfCells = (state, action) => {
     });
 }
 
+const updateZoom = (state, action) => {
+    return updateObject(state, {
+        zoom: action.val
+    });
+}
 
 const theGameOfLife = (state = initialState, action) => {
     switch(action.type){
@@ -36,6 +42,8 @@ const theGameOfLife = (state = initialState, action) => {
             return state;
         case actionTypes.UPDATE_NUMBER_OF_CELLS:
             return updateNumberOfCells(state, action);
+        case actionTypes.UPDATE_ZOOM:
+            return updateZoom(state, action);
         default: 
             return state;
     }
