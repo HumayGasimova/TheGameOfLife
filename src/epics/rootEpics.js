@@ -3,5 +3,6 @@ import * as Epic from './index'
 
 export const rootEpic = combineEpics(
     Epic.chooseFromDropdownEpic,
-    Epic.startZoomingEpic
+    Epic.startZoomingEpic,
+    Epic.gameInitializationEpic
 );

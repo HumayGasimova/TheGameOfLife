@@ -7,10 +7,10 @@ export function chooseFromDropdown(chosen) {
     };
 };
 
-export function updateNumberOfCells(number) {
+export function updateArrayOfCells(array) {
     return { 
-        type: actionTypes.UPDATE_NUMBER_OF_CELLS,
-        number: number
+        type: actionTypes.UPDATE_ARRAY_OF_CELLS,
+        array: array
     };
 };
 
@@ -32,5 +32,18 @@ export function startZooming(event) {
     return { 
         type: actionTypes.START_ZOOMING,
         event: event
+    };
+};
+
+export function gameInitialization() {
+    return { 
+        type: actionTypes.GAME_INITIALIZATION
+    };
+};
+
+export function makeTheCellAlive(id) {
+    return { 
+        type: actionTypes.MAKE_THE_CELL_ALIVE,
+        id: id
     };
 };

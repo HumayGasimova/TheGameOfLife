@@ -1,6 +1,7 @@
 .playingArea {
     width: 2550px;
     height: 520px;
+    cursor: pointer;
     .playingArea-cells{
         display: flex;
         flex-wrap: wrap;

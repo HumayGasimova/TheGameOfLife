@@ -56,6 +56,10 @@ export const PlayingArea = (props) => {
  
     // const [translation, setTranslation] = useState({ x: 2, y: 2 });
 
+    const handleOnClick = (id) => {
+        props.makeTheCellAlive(id);
+    }
+
     /**
     * Methods
     */ 
@@ -65,7 +69,10 @@ export const PlayingArea = (props) => {
             <div className="playingArea-cells">{props.cells.map((el,i)=>{
                 return(
                     <div key={i}>
-                        <Cell/>
+                        <Cell 
+                            onClick={() => handleOnClick(el.id)}
+                            cell={el}
+                        />
                     </div>
                 )
             })
@@ -75,34 +82,9 @@ export const PlayingArea = (props) => {
     }
 
     useEffect(()=>{
-        props.updateNumberOfCells(20500);
+        props.gameInitialization();
+        // props.updateNumberOfCells(20500);
     },[])
-    
-    // const mapInteractionCSSOnChange = (obj, zoom) => {
-    //     // console.log(obj, zoom)
-    //     switch(zoom){
-    //         case '1':
-    //             console.log("1", zoom);
-    //             break;
-    //         case '2':
-    //             console.log("2", zoom)
-    //             break;
-    //         case '3':
-    //             console.log("3", zoom);
-    //             break;
-    //         case '4':
-    //             console.log("4", zoom)
-    //             break;
-    //         case '5':
-    //             console.log("5", zoom);
-    //             break;
-    //         case '6':
-    //             console.log("6", zoom)
-    //             break;
-    //     }
-    //     setScale(2)
-    //     setTranslation({ x: 1, y: 1 })
-    // }
 
     /**
     * Markup
@@ -113,6 +95,7 @@ export const PlayingArea = (props) => {
                 scale={props.scale}
                 translation={props.translation}
                 disableZoom={true}
+                disablePan={true}
                 // showControls={true}
                 // onChange={({ scale, translation }, zoom) => mapInteractionCSSOnChange({ scale, translation }, props.zoom)}
             >
@@ -136,7 +119,8 @@ export default connect(
     },
     (dispatch) => {
         return {
-            updateNumberOfCells: bindActionCreators(Actions.updateNumberOfCells, dispatch),
+            gameInitialization: bindActionCreators(Actions.gameInitialization, dispatch),
+            makeTheCellAlive: bindActionCreators(Actions.makeTheCellAlive, dispatch),
         };
     }
 )(PlayingArea);

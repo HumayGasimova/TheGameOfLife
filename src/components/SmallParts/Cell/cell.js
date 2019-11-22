@@ -57,7 +57,10 @@ export const Cell = (props) => {
     */
 
         return(
-            <div className="cell"/>
+            <div 
+                className={props.cell.alive ? "cellAlive" : "cell"}
+                onClick={props.onClick}
+            />
         );
     
 }
