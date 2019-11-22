@@ -6,4 +6,5 @@ export {
     startZooming,
     gameInitialization,
     makeTheCellAlive,
+    onNextHandler
 } from './theGameOfLifeActions';

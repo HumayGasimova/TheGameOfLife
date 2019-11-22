@@ -94,7 +94,7 @@ export const Controller = (props) => {
                 </div>
                 <Button
                     className="controller-button"
-                    // onClick={this.props.startInvestmentsWithdraw}
+                    onClick={props.onNextHandler}
                     text={"Next"}
                 />
                 <Button
@@ -146,6 +146,7 @@ export default connect(
             updateZoom: bindActionCreators(Actions.updateZoom, dispatch),
             updateMapInteractionCSS: bindActionCreators(Actions.updateMapInteractionCSS, dispatch),
             startZooming: bindActionCreators(Actions.startZooming, dispatch),
+            onNextHandler: bindActionCreators(Actions.onNextHandler, dispatch),
         };
     }
 )(Controller);

@@ -48,3 +48,9 @@ export function makeTheCellAlive(id) {
     };
 };
 
+export function onNextHandler() {
+    return { 
+        type: actionTypes.ON_NEXT_HANDLER
+    };
+};
+

@@ -92,6 +92,8 @@ const theGameOfLife = (state = initialState, action) => {
             return state;
         case actionTypes.GAME_INITIALIZATION:
             return state;        
+        case actionTypes.ON_NEXT_HANDLER:
+            return state;  
         case actionTypes.UPDATE_ARRAY_OF_CELLS:
             return updateArrayOfCells(state, action);
         case actionTypes.UPDATE_ZOOM:
