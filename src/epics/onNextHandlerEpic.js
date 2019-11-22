@@ -89,15 +89,12 @@ export const onNextHandlerEpic = (action$, state$) =>
                     arrayOfCells.splice(15263, 1, {...arrayOfCells[15263], alive: true});
                 }
 
-                // if(arrayOfCells[212].alive === true ){
-                    
-                // }
-                // if(arrayOfCells[15053].alive === true){
-                    
-                // }
-                // if(arrayOfCells[15264].alive === true){
-                    
-                // }
+                // top line 
+                arrayOfCells.map((el,i)=>{
+                    if(i > 0 && i < 212){
+                        arrayOfCells = Utility.getUpdatedArrayOfCellsTopLine(arrayOfCells, i)
+                    }
+                })
             
             return of(
                    Actions.updateArrayOfCells(arrayOfCells),

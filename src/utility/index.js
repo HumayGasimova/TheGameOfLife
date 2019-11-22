@@ -6,5 +6,6 @@ export {
     getRandomRadius,
     getArrayOfCells,
     getRandomColor,
-    getRandomAlfa
+    getRandomAlfa,
+    getUpdatedArrayOfCellsTopLine
 } from './utility';

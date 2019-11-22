@@ -31,3 +31,36 @@ export const getRandomColor = () => {
 export const getRandomAlfa = () => {
     return  Math.random();
 } 
+
+export const getUpdatedArrayOfCellsTopLine = (array, i) => {
+    let arrayOfCells = array;
+    let arrayOfLiveCells = [];
+    if(arrayOfCells[i - 1].alive === true){
+        arrayOfLiveCells.push(1)
+    }
+    if(arrayOfCells[i + 1].alive === true){
+        arrayOfLiveCells.push(1)
+    }
+    if(arrayOfCells[i + 211].alive === true){
+        arrayOfLiveCells.push(1)
+    }
+    if(arrayOfCells[i + 212].alive === true){
+        arrayOfLiveCells.push(1)
+    }
+    if(arrayOfCells[i + 213].alive === true){
+        arrayOfLiveCells.push(1)
+    }
+    if(arrayOfCells[i].alive === true){
+        if(arrayOfLiveCells.length === 1 || arrayOfLiveCells.length === 4 || array.length === 5){
+            arrayOfCells[i].alive = false
+        }
+    }
+
+    if(arrayOfCells[i].alive === false){
+        if(arrayOfLiveCells.length === 3){
+            arrayOfCells[i].alive = true
+        }
+    }
+    
+    return  arrayOfCells;
+} 
