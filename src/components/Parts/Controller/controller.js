@@ -20,8 +20,7 @@ import {
 
 import { 
     faTachometerAlt,
-    faThLarge,
-
+    faThLarge
 } from '@fortawesome/free-solid-svg-icons'
 
 /**
@@ -30,6 +29,7 @@ import {
 
 import Dropdown from '../../../library/Dropdown/dropdown';
 import Button from '../../../library/Button/button';
+import InfoGameRules from '../InfoGameRules/infoGameRules';
 
 /**
 * Styles
@@ -54,13 +54,15 @@ import * as Actions from '../../../actions';
 */
 
 import * as Utility from '../../../utility';
-import { tsPropertySignature } from '@babel/types';
+
 
 /**
  * Controller component definition and export
  */
 
 export const Controller = (props) => {
+
+    const [infoIsShown, setInfoIsShown] = useState(false);
 
     /**
     * Methods
@@ -124,9 +126,10 @@ export const Controller = (props) => {
               
                 <Button
                     className="controller-button"
-                    // onClick={this.props.startInvestmentsWithdraw}
+                    onClick={() => setInfoIsShown(true)}
                     text={"Info"}
                 />
+               {infoIsShown ? <InfoGameRules toggleBackdrop={()=>setInfoIsShown(false)}/> : null} 
             </div>
         );
     

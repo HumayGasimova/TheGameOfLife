@@ -1,0 +1,33 @@
+.infoGameRules {
+    .infoGameRules-textBox {
+        padding: 0px 10px 0 20px;
+        width: 1200px;
+        height: 450px;
+        position: absolute;
+        z-index: 600;
+        top: 130px;
+        left: 150px;
+        background: rgba($color: white, $alpha: 1.0);
+        font-size: 17px;
+        overflow: auto;
+        .infoGameRules-wrapper {
+            display: flex;
+            justify-content: space-between;
+            .infoGameRules-X {
+                width: 20px;
+                height: 20px;
+                border: 1.5px solid rgb(101, 109, 93);
+                text-align: center;
+                margin-top: 5px;
+                background: rgb(145, 168, 151);
+                &:hover {
+                    background: rgb(101, 109, 93);
+                }
+            }
+        }
+        .infoGameRules-textLine-with-padding-left{
+            padding-left: 30px;
+        }
+    }
+    
+}

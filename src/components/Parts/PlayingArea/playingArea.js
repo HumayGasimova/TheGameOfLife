@@ -53,7 +53,7 @@ import * as Utility from '../../../utility';
 
 export const PlayingArea = (props) => {
 
-    // const [scale, setScale] = useState(1);
+ 
     // const [translation, setTranslation] = useState({ x: 2, y: 2 });
 
     /**
