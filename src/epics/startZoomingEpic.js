@@ -25,7 +25,7 @@ import * as Actions from '../actions';
 * Epic
 */
 
-export const startZoomingEpic = (action$$) => 
+export const startZoomingEpic = (action$) => 
     action$.pipe(
         ofType(actionTypes.START_ZOOMING),
         mergeMap(action => {
