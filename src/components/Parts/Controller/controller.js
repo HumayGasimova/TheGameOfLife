@@ -66,9 +66,10 @@ export const Controller = (props) => {
     * Methods
     */ 
 
-    const onZoomChange = (e) => {
-        props.updateZoom(e.target.value)
-    }
+    // const onZoomChange = (e) => {
+    //     props.updateZoom(e.target.value);
+    //     props.updateMapInteractionCSS(props.zoom)
+    // }
 
     /**
     * Markup
@@ -117,7 +118,7 @@ export const Controller = (props) => {
                         value={props.zoom} 
                         min="1" 
                         max ="10" 
-                        onChange={()=>onZoomChange(event)}
+                        onChange={()=>props.startZooming(event)}
                     />
                 </div>
               
@@ -140,6 +141,8 @@ export default connect(
     (dispatch) => {
         return {
             updateZoom: bindActionCreators(Actions.updateZoom, dispatch),
+            updateMapInteractionCSS: bindActionCreators(Actions.updateMapInteractionCSS, dispatch),
+            startZooming: bindActionCreators(Actions.startZooming, dispatch),
         };
     }
 )(Controller);

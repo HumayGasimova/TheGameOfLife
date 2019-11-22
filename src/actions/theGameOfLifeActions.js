@@ -21,3 +21,16 @@ export function updateZoom(val) {
     };
 };
 
+export function updateMapInteractionCSS(val) {
+    return { 
+        type: actionTypes.UPDATE_MAP_INTERACTION_CSS,
+        zoom: val
+    };
+};
+
+export function startZooming(event) {
+    return { 
+        type: actionTypes.START_ZOOMING,
+        event: event
+    };
+};

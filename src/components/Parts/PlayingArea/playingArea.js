@@ -15,7 +15,9 @@ import {
     bindActionCreators
 } from 'redux';
 
-import { MapInteractionCSS } from 'react-map-interaction';
+import { 
+    MapInteractionCSS 
+} from 'react-map-interaction';
 
 /**
 * Components
@@ -51,8 +53,8 @@ import * as Utility from '../../../utility';
 
 export const PlayingArea = (props) => {
 
-    const [scale, setScale] = useState(1);
-    const [translation, setTranslation] = useState({ x: 2, y: 2 });
+    // const [scale, setScale] = useState(1);
+    // const [translation, setTranslation] = useState({ x: 2, y: 2 });
 
     /**
     * Methods
@@ -76,31 +78,31 @@ export const PlayingArea = (props) => {
         props.updateNumberOfCells(5500);
     },[])
     
-    const mapInteractionCSSOnChange = (obj, zoom) => {
-        // console.log(obj, zoom)
-        switch(zoom){
-            case '1':
-                console.log("1", zoom);
-                break;
-            case '2':
-                console.log("2", zoom)
-                break;
-            case '3':
-                console.log("3", zoom);
-                break;
-            case '4':
-                console.log("4", zoom)
-                break;
-            case '5':
-                console.log("5", zoom);
-                break;
-            case '6':
-                console.log("6", zoom)
-                break;
-        }
-        setScale(2)
-        setTranslation({ x: 1, y: 1 })
-    }
+    // const mapInteractionCSSOnChange = (obj, zoom) => {
+    //     // console.log(obj, zoom)
+    //     switch(zoom){
+    //         case '1':
+    //             console.log("1", zoom);
+    //             break;
+    //         case '2':
+    //             console.log("2", zoom)
+    //             break;
+    //         case '3':
+    //             console.log("3", zoom);
+    //             break;
+    //         case '4':
+    //             console.log("4", zoom)
+    //             break;
+    //         case '5':
+    //             console.log("5", zoom);
+    //             break;
+    //         case '6':
+    //             console.log("6", zoom)
+    //             break;
+    //     }
+    //     setScale(2)
+    //     setTranslation({ x: 1, y: 1 })
+    // }
 
     /**
     * Markup
@@ -108,10 +110,11 @@ export const PlayingArea = (props) => {
 
         return(
             <MapInteractionCSS
-                scale={scale}
-                translation={translation}
+                scale={props.scale}
+                translation={props.translation}
+                disableZoom={true}
                 // showControls={true}
-                onChange={({ scale, translation }, zoom) => mapInteractionCSSOnChange({ scale, translation }, props.zoom)}
+                // onChange={({ scale, translation }, zoom) => mapInteractionCSSOnChange({ scale, translation }, props.zoom)}
             >
                 <div className="playingArea">
                     {renderCells()}
@@ -127,6 +130,8 @@ export default connect(
         return {
             cells: Selectors.getCellsState(state),
             zoom: Selectors.getZoomState(state),
+            scale: Selectors.getScaleState(state),
+            translation: Selectors.getTranslationState(state),
         };
     },
     (dispatch) => {

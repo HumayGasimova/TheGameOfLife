@@ -38,14 +38,77 @@ const updateZoom = (state, action) => {
     });
 }
 
+const updateMapInteractionCSS = (state, action) => {
+    switch(action.zoom){
+        case '1':
+            return updateObject(state, {
+                scale: 1,
+                translation: { x: 1, y: 1 }
+            });
+        case '2':
+            return updateObject(state, {
+                scale: 0,
+                translation: { x: 1, y: 1 }
+            });
+        case '3':
+            return updateObject(state, {
+                scale: 3,
+                translation: { x: 1, y: 1 }
+            });
+        case '4':
+            return updateObject(state, {
+                scale: 4,
+                translation: { x: 1, y: 1 }
+            });
+        case '5':
+            return updateObject(state, {
+                scale: 5,
+                translation: { x: 1, y: 1 }
+            });
+        case '6':
+            return updateObject(state, {
+                scale: 6,
+                translation: { x: 1, y: 1 }
+            });
+        case '7':
+            return updateObject(state, {
+                scale: 7,
+                translation: { x: 1, y: 1 }
+            });
+        case '8':
+            return updateObject(state, {
+                scale: 1,
+                translation: { x: 1, y: 1 }
+            });
+        case '9':
+            return updateObject(state, {
+                scale: 1,
+                translation: { x: 1, y: 1 }
+            });
+        case '10':
+            return updateObject(state, {
+                scale: 1,
+                translation: { x: 1, y: 1 }
+            });
+        default:
+            return state;
+    }
+}
+
+
+
 const theGameOfLife = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHOOSE_FROM_DROPDOWN:
+            return state;
+        case actionTypes.START_ZOOMING:
             return state;
         case actionTypes.UPDATE_NUMBER_OF_CELLS:
             return updateNumberOfCells(state, action);
         case actionTypes.UPDATE_ZOOM:
             return updateZoom(state, action);
+        case actionTypes.UPDATE_MAP_INTERACTION_CSS:
+            return updateMapInteractionCSS(state, action);
         default: 
             return state;
     }

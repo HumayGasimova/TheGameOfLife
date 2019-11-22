@@ -13,3 +13,17 @@ export const getZoomState = createSelector(
     [getZoom],
     (x) => x
 );
+
+const getScale = (state) => state.theGameOfLife.scale;
+
+export const getScaleState = createSelector(
+    [getScale],
+    (x) => x
+);
+
+const getTranslation = (state) => state.theGameOfLife.translation;
+
+export const getTranslationState = createSelector(
+    [getTranslation],
+    (x) => x
+);

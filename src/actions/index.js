@@ -1,5 +1,7 @@
 export {
     chooseFromDropdown,
     updateNumberOfCells,
-    updateZoom
+    updateZoom,
+    updateMapInteractionCSS,
+    startZooming
 } from './theGameOfLifeActions';
