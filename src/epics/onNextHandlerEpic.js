@@ -101,12 +101,14 @@ export const onNextHandlerEpic = (action$, state$) =>
                   
                     if(i > 0 && i < 212){
                         let resultTopLineCell = Utility.getUpdatedArrayOfCellsTopLine(arrayOfCells, i);
-                        arrayOfBoolean.splice(i, 0, resultTopLineCell)
+                        console.log(resultTopLineCell)
+                        arrayOfBoolean.splice(i, 1, resultTopLineCell)
                     }
-                    if(i > 15052 && i < 15263){
-                        let resultBottomLineCell = Utility.getUpdatedArrayOfCellsBottomLine(arrayOfCells, i);
-                        arrayOfBoolean.splice(i, 0, resultBottomLineCell)
-                    }
+                    // if(i > 15052 && i < 15263){
+                    //     let resultBottomLineCell = Utility.getUpdatedArrayOfCellsBottomLine(arrayOfCells, i);
+                    //     arrayOfBoolean.splice(i, 0, resultBottomLineCell)
+                    // }
+                   
                 })
 
                 arrayOfBoolean.map((el,i) => {

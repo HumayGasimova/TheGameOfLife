@@ -35,7 +35,7 @@ export const getRandomAlfa = () => {
 export const getUpdatedArrayOfCellsTopLine = (array, i) => {
     let arrayOfCells = array;
     let arrayOfLiveCells = [];
-    let cell;
+    let result;
     if(arrayOfCells[i - 1].alive === true){
         arrayOfLiveCells.push(1)
     }
@@ -52,51 +52,62 @@ export const getUpdatedArrayOfCellsTopLine = (array, i) => {
         arrayOfLiveCells.push(1)
     }
     if(arrayOfCells[i].alive === true){
-        if(arrayOfLiveCells.length === 1 || arrayOfLiveCells.length === 4 || arrayOfLiveCells.length === 5){
-            return false
+        if(arrayOfLiveCells.length === 0 || arrayOfLiveCells.length === 1 || arrayOfLiveCells.length === 4 || arrayOfLiveCells.length === 5){
+            result = false;
+        }else{
+            if(arrayOfLiveCells.length === 2 || arrayOfLiveCells.length === 3){
+                result = true;
+            }
         }
     }
 
     if(arrayOfCells[i].alive === false && arrayOfLiveCells.length === 3){
-        return true
+        result = true;
+    }else{
+        if(arrayOfLiveCells.length === 0 || arrayOfLiveCells.length === 1 || arrayOfLiveCells.length === 2 || arrayOfLiveCells.length === 4 || arrayOfLiveCells.length === 5){
+            result = false;
+        }
     }
+    return result;
 } 
 
 export const getUpdatedArrayOfCellsBottomLine = (array, i) => {
-    let arrayOfCells = array;
-    let arrayOfLiveCells = [];
-    if(arrayOfCells[i - 1].alive === true){
-        arrayOfLiveCells.push(1)
-    }
-    if(arrayOfCells[i + 1].alive === true){
-        arrayOfLiveCells.push(1)
-    }
-    if(arrayOfCells[i - 211].alive === true){
-        arrayOfLiveCells.push(1)
-    }
-    if(arrayOfCells[i - 212].alive === true){
-        arrayOfLiveCells.push(1)
-    }
-    if(arrayOfCells[i - 213].alive === true){
-        arrayOfLiveCells.push(1)
-    }
-    if(arrayOfCells[i].alive === true){
-        if(arrayOfLiveCells.length === 1 || arrayOfLiveCells.length === 4 || arrayOfLiveCells.length === 5){
-           return false;
-        }else{
-            if(arrayOfLiveCells.length === 2 || arrayOfLiveCells.length === 3){
-                return true
-            }
-        }
-    }
+    // let arrayOfCells = array;
+    // let arrayOfLiveCells = [];
+    // let result;
+    // if(arrayOfCells[i - 1].alive === true){
+    //     arrayOfLiveCells.push(1)
+    // }
+    // if(arrayOfCells[i + 1].alive === true){
+    //     arrayOfLiveCells.push(1)
+    // }
+    // if(arrayOfCells[i - 211].alive === true){
+    //     arrayOfLiveCells.push(1)
+    // }
+    // if(arrayOfCells[i - 212].alive === true){
+    //     arrayOfLiveCells.push(1)
+    // }
+    // if(arrayOfCells[i - 213].alive === true){
+    //     arrayOfLiveCells.push(1)
+    // }
+    // if(arrayOfCells[i].alive === true){
+    //     if(arrayOfLiveCells.length === 0 || arrayOfLiveCells.length === 1 || arrayOfLiveCells.length === 4 || arrayOfLiveCells.length === 5){
+    //         result = false;
+    //     }else{
+    //         if(arrayOfLiveCells.length === 2 || arrayOfLiveCells.length === 3){
+    //             result = true;
+    //         }
+    //     }
+    // }
 
-    if(arrayOfCells[i].alive === false){
-        if(arrayOfLiveCells.length === 3){
-            return true;
-        }else{
-            if(arrayOfLiveCells.length === 1 || arrayOfLiveCells.length === 2 || arrayOfLiveCells.length === 4 || arrayOfLiveCells.length === 5){
-                return false
-            }
-        }
-    }
+    // if(arrayOfCells[i].alive === false){
+    //     if(arrayOfLiveCells.length === 3){
+    //         result = true;
+    //     }else{
+    //         if(arrayOfLiveCells.length === 0 || arrayOfLiveCells.length === 1 || arrayOfLiveCells.length === 2 || arrayOfLiveCells.length === 4 || arrayOfLiveCells.length === 5){
+    //             result = false;
+    //         }
+    //     }
+    // }
+    // return result;
 } 
