@@ -119,6 +119,17 @@ export const onNextHandlerEpic = (action$, state$) =>
                         let resultLeftLineCell = Utility.getUpdatedArrayOfCellsLeftLine(arrayOfCells, i);
                         arrayOfBoolean.splice(i, 1, resultLeftLineCell)
                     }
+                    if(i === 423 || i === 635 || i === 847 || i === 1059 || i === 1271 || i === 1483 || i === 1695 || i === 1907 || i === 2119 || i === 2331 || 
+                        i === 2543 || i === 2755 || i === 2967 || i === 3179 || i === 3391 || i === 3603 || i === 3815 || i === 4027 || i === 4239 || i === 4451 || 
+                        i === 4663 || i === 4875 || i === 5087 || i === 5299 || i === 5511 || i === 5723 || i === 5935 || i === 6147 || i === 6359 || i === 6571 || 
+                        i === 6783 || i === 6995 || i === 7207 || i === 7419 || i === 7631 || i === 7843 || i === 8055 || i === 8267 || i === 8479 || i === 8691 || 
+                        i === 8903 || i === 9115 || i === 9327 || i === 9539 || i === 9751 || i === 9963 || i === 10175 || i === 10387 || i === 10599 || i === 10811 || 
+                        i === 11023 || i === 11235 || i === 11447 || i === 11659 || i === 11871 || i === 12083 || i === 12295 || i === 12507 || i === 12719 || 
+                        i === 12931 || i === 13143 || i === 13355 || i === 13567 || i === 13779 || i === 13991 || i === 14203 || i === 14415 || i === 14627 || 
+                        i === 14839 || i === 15051){
+                        let resultLeftLineCell = Utility.getUpdatedArrayOfCellsRightLine(arrayOfCells, i);
+                        arrayOfBoolean.splice(i, 1, resultLeftLineCell)
+                    }
                 })
                 arrayOfBoolean.map((el,i) => {
                     updatedArrayOfCells.push({

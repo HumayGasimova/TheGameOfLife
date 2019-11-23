@@ -153,3 +153,45 @@ export const getUpdatedArrayOfCellsLeftLine = (array, i) => {
     }
     return result;
 } 
+
+export const getUpdatedArrayOfCellsRightLine = (array, i) => {
+    let arrayOfCells = array;
+    let arrayOfLiveCells = [];
+    let result;
+    
+    if(arrayOfCells[i - 213].alive === true){
+        arrayOfLiveCells.push(1)
+    }
+    if(arrayOfCells[i - 212].alive === true){
+        arrayOfLiveCells.push(1) 
+    }
+    if(arrayOfCells[i - 1].alive === true){
+        arrayOfLiveCells.push(1)
+    }
+    if(arrayOfCells[i + 211].alive === true){
+        arrayOfLiveCells.push(1)
+    }
+    if(arrayOfCells[i + 212].alive === true){
+        arrayOfLiveCells.push(1)
+    }
+    if(arrayOfCells[i].alive === true){
+        if(arrayOfLiveCells.length === 0 || arrayOfLiveCells.length === 1 || arrayOfLiveCells.length === 4 || arrayOfLiveCells.length === 5){
+            result = false;
+        }else{
+            if(arrayOfLiveCells.length === 2 || arrayOfLiveCells.length === 3){
+                result = true;
+            }
+        }
+    }
+
+    if(arrayOfCells[i].alive === false){
+        if(arrayOfLiveCells.length === 3){
+            result = true;
+        }else{
+            if(arrayOfLiveCells.length === 0 || arrayOfLiveCells.length === 1 || arrayOfLiveCells.length === 2 || arrayOfLiveCells.length === 4 || arrayOfLiveCells.length === 5){
+                result = false;
+            }
+        }
+    }
+    return result;
+} 

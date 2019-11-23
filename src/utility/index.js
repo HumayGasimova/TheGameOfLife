@@ -9,5 +9,6 @@ export {
     getRandomAlfa,
     getUpdatedArrayOfCellsTopLine,
     getUpdatedArrayOfCellsBottomLine,
-    getUpdatedArrayOfCellsLeftLine
+    getUpdatedArrayOfCellsLeftLine,
+    getUpdatedArrayOfCellsRightLine
 } from './utility';
