@@ -8,5 +8,6 @@ export {
     getRandomColor,
     getRandomAlfa,
     getUpdatedArrayOfCellsTopLine,
-    getUpdatedArrayOfCellsBottomLine
+    getUpdatedArrayOfCellsBottomLine,
+    getUpdatedArrayOfCellsLeftLine
 } from './utility';
