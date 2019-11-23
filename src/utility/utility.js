@@ -52,18 +52,14 @@ export const getUpdatedArrayOfCellsTopLine = (array, i) => {
         arrayOfLiveCells.push(1)
     }
     if(arrayOfCells[i].alive === true){
-        if(arrayOfLiveCells.length === 1 || arrayOfLiveCells.length === 4 || array.length === 5){
-            cell = {...arrayOfCells[i], alive: false}
-            arrayOfCells.splice(i,1,cell)
+        if(arrayOfLiveCells.length === 1 || arrayOfLiveCells.length === 4 || arrayOfLiveCells.length === 5){
+            return false
         }
     }
 
     if(arrayOfCells[i].alive === false && arrayOfLiveCells.length === 3){
-        cell = {...arrayOfCells[i], alive: true}
-        arrayOfCells.splice(i,1,cell)
+        return true
     }
-    
-    return  arrayOfCells;
 } 
 
 export const getUpdatedArrayOfCellsBottomLine = (array, i) => {
@@ -85,18 +81,22 @@ export const getUpdatedArrayOfCellsBottomLine = (array, i) => {
         arrayOfLiveCells.push(1)
     }
     if(arrayOfCells[i].alive === true){
-        if(arrayOfLiveCells.length === 1 || arrayOfLiveCells.length === 4 || array.length === 5){
-            arrayOfCells[i].alive = false
+        if(arrayOfLiveCells.length === 1 || arrayOfLiveCells.length === 4 || arrayOfLiveCells.length === 5){
+           return false;
+        }else{
+            if(arrayOfLiveCells.length === 2 || arrayOfLiveCells.length === 3){
+                return true
+            }
         }
     }
 
     if(arrayOfCells[i].alive === false){
         if(arrayOfLiveCells.length === 3){
-            arrayOfCells[i].alive = true
+            return true;
+        }else{
+            if(arrayOfLiveCells.length === 1 || arrayOfLiveCells.length === 2 || arrayOfLiveCells.length === 4 || arrayOfLiveCells.length === 5){
+                return false
+            }
         }
     }
-
-    // arrayOfCells.splice(i,1,arrayOfCells[i])
-    
-    return  arrayOfCells;
 } 
