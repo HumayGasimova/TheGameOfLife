@@ -96,18 +96,20 @@ export const onNextHandlerEpic = (action$, state$) =>
                     arrayOfBoolean.splice(15263, 1, true);
                 }
 
-                // top line 
+                
                 arrayOfCells.map((el,i)=>{
-                  
+                    // top line 
                     if(i > 0 && i < 212){
                         let resultTopLineCell = Utility.getUpdatedArrayOfCellsTopLine(arrayOfCells, i);
                         console.log(resultTopLineCell)
                         arrayOfBoolean.splice(i, 1, resultTopLineCell)
                     }
+                    // bottom line 
                     if(i > 15052 && i < 15263){
                         let resultBottomLineCell = Utility.getUpdatedArrayOfCellsBottomLine(arrayOfCells, i);
                         arrayOfBoolean.splice(i, 1, resultBottomLineCell)
                     }
+                    // left line 
                     if(i === 212 || i === 424 || i === 636 || i === 848 || i === 1060 || i === 1272 || i === 1484 || i === 1696 || i === 1908 || i === 2120 || 
                         i === 2332 || i === 2544 || i === 2756 || i === 2968 || i === 3180 || i === 3392 || i === 3604 || i === 3816 || i === 4028 || i === 4240 || 
                         i === 4452 || i === 4664 || i === 4876 || i === 5088 || i === 5300 || i === 5512 || i === 5724 || i === 5936 || i === 6148 || i === 6360 || 
@@ -119,6 +121,7 @@ export const onNextHandlerEpic = (action$, state$) =>
                         let resultLeftLineCell = Utility.getUpdatedArrayOfCellsLeftLine(arrayOfCells, i);
                         arrayOfBoolean.splice(i, 1, resultLeftLineCell)
                     }
+                    // right line 
                     if(i === 423 || i === 635 || i === 847 || i === 1059 || i === 1271 || i === 1483 || i === 1695 || i === 1907 || i === 2119 || i === 2331 || 
                         i === 2543 || i === 2755 || i === 2967 || i === 3179 || i === 3391 || i === 3603 || i === 3815 || i === 4027 || i === 4239 || i === 4451 || 
                         i === 4663 || i === 4875 || i === 5087 || i === 5299 || i === 5511 || i === 5723 || i === 5935 || i === 6147 || i === 6359 || i === 6571 || 
@@ -131,6 +134,22 @@ export const onNextHandlerEpic = (action$, state$) =>
                         arrayOfBoolean.splice(i, 1, resultLeftLineCell)
                     }
                 })
+
+                // if(i > 0 && i < 211 || i > 212 && i < 423 || i > 424 && i < 635 || i > 636 && i < 847 ||
+                //     i > 848 && i < 1059 || i > 1060 && i < 1271 || i > 848 && i < 1059 || i > 1060 && i < 1271 ||
+                //     i > 1272 && i < 1483 || i > 1484 && i < 1695 || i > 1696 && i < 1907 || i > 1908 && i < 2119 ||
+                //     i > 2120 && i < 2331 || i > 2332 && i < 2543 || i > 2544 && i < 2755 || i > 2756 && i < 2967 ||
+                //     i > 2968 && i < 3179 || i > 3180 && i < 3391 || i > 3392 && i < 3603 || i > 3604 && i < 3815 ||
+                //     i > 3816 && i < 4027 || i > 4028 && i < 4239 || i > 4240 && i < 4451 || i > 4452 && i < 6783 ||
+                //     i > 6784 && i < 6995 || i > 6996 && i < 7207 || i > 7208 && i < 7419 || i > 7420 && i < 7631 ||
+
+
+                //     i > 2120 && i < 2331 || i > 2332 && i < 2543 || i > 2544 && i < 2755 || i > 2756 && i < 2967 ||
+                //     i > 2120 && i < 2331 || i > 2332 && i < 2543 || i > 2544 && i < 2755 || i > 2756 && i < 2967 ||
+                //     ){
+
+                // }
+
                 arrayOfBoolean.map((el,i) => {
                     updatedArrayOfCells.push({
                         id: i + 1,
