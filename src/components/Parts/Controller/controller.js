@@ -133,7 +133,6 @@ export const Controller = (props) => {
     }
 
     const chooseOption = (el) => {
-        console.log(el)
         setDropdownOption(el)
         switch (el){
             case "Clear":
@@ -340,7 +339,6 @@ export const Controller = (props) => {
                 text={"Info"}
             />
             {infoIsShown ? <InfoGameRules toggleBackdrop={()=>setInfoIsShown(false)}/> : null} 
-            {       console.log(delay)}
         </div>
     );
 }

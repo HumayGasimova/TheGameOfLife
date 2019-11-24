@@ -4,7 +4,7 @@
     height: 19px;
     .dropdown-top-controller {
         border: 1px solid rgb(190, 190, 190);
-        width: 161px;
+        width: 171px;
         height: 19px;
         display: flex;
         justify-content: space-between;  
@@ -12,7 +12,7 @@
     .dropdown-top-active-controller {
         border: 1px solid rgb(190, 190, 190);
         box-shadow: 0px 0px 1px 1px rgb(157, 222, 248);
-        width: 161px;
+        width: 171px;
         height: 19px;
         display: flex;
         justify-content: space-between;
@@ -23,7 +23,8 @@
         border: 0.5px solid rgb(190, 190, 190);
         box-shadow: 0px 0px 1px 1px rgb(157, 222, 248);
         font-size: 15px;
-        width: 162px;
+        width: 172px;
+        font-family: 'KoHo', sans-serif;
         >div{
             padding: 3px 0 3px 5px;
             &:hover{
@@ -38,9 +39,10 @@
 .dropdown-top-text-controller{
     padding-left: 3px;
     padding-top: 1px;
-    width: 139px;
+    width: 149px;
     height: 18px;
     font-size: 15px;
+    font-family: 'KoHo', sans-serif;
 }
 
 img {

@@ -61,7 +61,7 @@ export const Header = () => {
 
         return(
             <div className="header">
-              
+              The Game Of Life
             </div>
         );
     
