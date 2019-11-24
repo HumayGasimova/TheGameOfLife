@@ -10,5 +10,6 @@ export {
     getUpdatedArrayOfCellsTopLine,
     getUpdatedArrayOfCellsBottomLine,
     getUpdatedArrayOfCellsLeftLine,
-    getUpdatedArrayOfCellsRightLine
+    getUpdatedArrayOfCellsRightLine,
+    getUpdatedArrayOfCellsCenter
 } from './utility';
