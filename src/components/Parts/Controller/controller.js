@@ -76,43 +76,43 @@ export const Controller = (props) => {
     const [delay, setDelay] = useState(1000);
     const [speedRange, setSpeedRange] = useState(1);
     const [showDropdown, setShowDropdown] = useState(false);
-    
+    const [dropdownOption, setDropdownOption] = useState("Clear");
 
     /**
     * Methods
     */ 
 
-   useInterval(() => {
+    useInterval(() => {
         setCount(count + 1);
         props.onNextHandler();
-   }, counterIsRunning ? delay : null)
+    }, counterIsRunning ? delay : null)
 
-   const toggleNextButton = () => {
+    const toggleNextButton = () => {
         setCount(count + 1);
         props.onNextHandler();
-   }
+    }
 
-   const speedHandler = (e) => {
-       setSpeedRange(+(e.target.value));
-       switch(+(e.target.value)){
+    const speedHandler = (e) => {
+        setSpeedRange(+(e.target.value));
+        switch(+(e.target.value)){
             case 1:
                 setDelay(1000);
                 break;
             case 2:
-               setDelay(900);
-               break;
+                setDelay(900);
+                break;
             case 3:
-               setDelay(800);
-               break;
+                setDelay(800);
+                break;
             case 4:
-               setDelay(700);
-               break;
+                setDelay(700);
+                break;
             case 5:
-               setDelay(600);
-               break;
+                setDelay(600);
+                break;
             case 6:
-               setDelay(500);
-               break;
+                setDelay(500);
+                break;
             case 7:
                 setDelay(400);
                 break;
@@ -128,71 +128,75 @@ export const Controller = (props) => {
             case 11:
                 setDelay(50);
                 break;
-       }
-       
+        }
+    }
 
-   }
+    const chooseOption = (el) => {
+        console.log(el)
+        setDropdownOption(el)
+    }
+
     /**
     * Markup
     */
 
-        return(
-            <div className="controller">
-                <div className="controler-wrapper">
-                    <Dropdown 
-                        list={["Clear", "Glider", "Small Exploder", "Exploder", "10 Cell Row", "Lightweight spaceship", "Tumbler", "Gosper Glider Gun"]}
-                        dropdownClassName={"dropdown-controller"}
-                        dropdownTopClassName={"dropdown-top-controller"}
-                        dropdownTopActiveClassName={"dropdown-top-active-controller"}
-                        dropdownBottomClassName={"dropdown-bottom-controller"}
-                        dropdownTopTextClassName={"dropdown-top-text-controller"}
-                        toggleDropdown={() => setShowDropdown(!showDropdown)}
-                        showDropdown={showDropdown}
-                        // chosenListDropdown={this.props.chosenListDropdown[0]}
-                    />
-                </div>
-                <Button
-                    className="controller-button"
-                    onClick={toggleNextButton}
-                    text={"Next"}
+    return(
+        <div className="controller">
+            <div className="controler-wrapper">
+                <Dropdown 
+                    list={["Clear", "Glider", "Small Exploder", "Exploder", "10 Cell Row", "Lightweight spaceship", "Tumbler", "Gosper Glider Gun"]}
+                    dropdownClassName={"dropdown-controller"}
+                    dropdownTopClassName={"dropdown-top-controller"}
+                    dropdownTopActiveClassName={"dropdown-top-active-controller"}
+                    dropdownBottomClassName={"dropdown-bottom-controller"}
+                    dropdownTopTextClassName={"dropdown-top-text-controller"}
+                    toggleDropdown={() => setShowDropdown(!showDropdown)}
+                    showDropdown={showDropdown}
+                    chooseOption={chooseOption}
+                    chosenListDropdown={dropdownOption}
                 />
-                <Button
-                    className="controller-button"
-                    onClick={() => {toggleCounter(!counterIsRunning)}}
-                    text={counterIsRunning ? "Stop" : "Start"}
-                />
-                <div className="controller-moves">{count}</div>
-                <div className="controler-wrapper">
-                    <FontAwesomeIcon icon={faTachometerAlt} size="lg"/>
-                    <input 
-                        type="range" 
-                        value={speedRange} 
-                        min="1" 
-                        max ="11" 
-                        onChange={()=>speedHandler(event)}
-                    />
-                </div>
-                <div className="controler-wrapper">
-                    <FontAwesomeIcon icon={faThLarge} size="lg"/>
-                    <input 
-                        type="range" 
-                        value={props.zoom} 
-                        min="1" 
-                        max ="5" 
-                        onChange={()=>props.startZooming(event)}
-                    />
-                </div>
-              
-                <Button
-                    className="controller-button"
-                    onClick={() => setInfoIsShown(true)}
-                    text={"Info"}
-                />
-               {infoIsShown ? <InfoGameRules toggleBackdrop={()=>setInfoIsShown(false)}/> : null} 
-               {       console.log(delay)}
             </div>
-        );
-    
+            <Button
+                className="controller-button"
+                onClick={toggleNextButton}
+                text={"Next"}
+            />
+            <Button
+                className="controller-button"
+                onClick={() => {toggleCounter(!counterIsRunning)}}
+                text={counterIsRunning ? "Stop" : "Start"}
+            />
+            <div className="controller-moves">{count}</div>
+            <div className="controler-wrapper">
+                <FontAwesomeIcon icon={faTachometerAlt} size="lg"/>
+                <input 
+                    type="range" 
+                    value={speedRange} 
+                    min="1" 
+                    max ="11" 
+                    onChange={()=>speedHandler(event)}
+                />
+            </div>
+            <div className="controler-wrapper">
+                <FontAwesomeIcon icon={faThLarge} size="lg"/>
+                <input 
+                    type="range" 
+                    value={props.zoom} 
+                    min="1" 
+                    max ="5" 
+                    onChange={()=>props.startZooming(event)}
+                />
+            </div>
+            
+            <Button
+                className="controller-button"
+                onClick={() => setInfoIsShown(true)}
+                text={"Info"}
+            />
+            {infoIsShown ? <InfoGameRules toggleBackdrop={()=>setInfoIsShown(false)}/> : null} 
+            {       console.log(delay)}
+        </div>
+    );
 }
 
 export default connect(

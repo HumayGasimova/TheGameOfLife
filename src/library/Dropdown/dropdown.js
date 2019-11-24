@@ -44,7 +44,8 @@ class Dropdown extends Component {
 
     handleOnClick = (i, el) => {
         // this.props.chooseFromDropdown(el, this.props.elementsIndexInArray);
-        this.props.chooseFromDropdown(el);
+        // this.props.chooseFromDropdown(el);
+        this.props.chooseOption(el)
     }
 
     /**
@@ -80,8 +81,7 @@ class Dropdown extends Component {
                     onClick={this.props.toggleDropdown}
                 >
                     <div className={this.props.dropdownTopTextClassName}> 
-                    Hey
-                        {/* {this.props.chosenListDropdown} */}
+                        {this.props.chosenListDropdown}
                     </div>
                     <div>
                         <img src={Arrow} alt="arrow"/>
