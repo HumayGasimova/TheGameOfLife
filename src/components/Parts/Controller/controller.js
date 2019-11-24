@@ -30,6 +30,7 @@ import {
 import Dropdown from '../../../library/Dropdown/dropdown';
 import Button from '../../../library/Button/button';
 import InfoGameRules from '../InfoGameRules/infoGameRules';
+import Backdrop from '../../../library/Backdrop/backdrop';
 
 /**
 * Styles
@@ -296,6 +297,11 @@ export const Controller = (props) => {
                     chosenListDropdown={dropdownOption}
                 />
             </div>
+            <Backdrop 
+                show={showDropdown} 
+                onClick={() => setShowDropdown(false)}
+                className={"backdrop-dropdown"}
+            />
             <Button
                 className="controller-button"
                 onClick={toggleNextButton}

@@ -99,7 +99,11 @@ export const InfoGameRules = (props) => {
                     />
                     <br/>
                 </div> 
-                <Backdrop show={true} onClick={props.toggleBackdrop}/>
+                <Backdrop 
+                    show={true} 
+                    onClick={props.toggleBackdrop}
+                    className={"backdrop-infoGameRules"}
+                />
             </div> 
         );
     

@@ -2,9 +2,7 @@
     background: white;
     // width: 121px;
     height: 19px;
-    z-index: 400;
     .dropdown-top-controller {
-        // margin-left: 5px;
         border: 1px solid rgb(190, 190, 190);
         width: 161px;
         height: 19px;
@@ -12,7 +10,6 @@
         justify-content: space-between;  
     }
     .dropdown-top-active-controller {
-        // margin-left: 5px;
         border: 1px solid rgb(190, 190, 190);
         box-shadow: 0px 0px 1px 1px rgb(157, 222, 248);
         width: 161px;
@@ -23,7 +20,6 @@
     .dropdown-bottom-controller {
         position: absolute;
         background-color: white;
-        // margin-left: 5px;
         border: 0.5px solid rgb(190, 190, 190);
         box-shadow: 0px 0px 1px 1px rgb(157, 222, 248);
         font-size: 15px;
