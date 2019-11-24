@@ -55,6 +55,14 @@ import * as Actions from '../../../actions';
 
 import * as Utility from '../../../utility';
 
+/**
+* Hooks
+*/
+
+import {
+    useInterval
+} from '../../../Hooks/useInterval';
+
 
 /**
  * Controller component definition and export
@@ -63,15 +71,17 @@ import * as Utility from '../../../utility';
 export const Controller = (props) => {
 
     const [infoIsShown, setInfoIsShown] = useState(false);
+    const [count, setCount] = useState(0);
+    const [counterIsRunning, toggleCounter] = useState(false);
+    const [delay, setDelay] = useState(1000);
 
     /**
     * Methods
     */ 
 
-    // const onZoomChange = (e) => {
-    //     props.updateZoom(e.target.value);
-    //     props.updateMapInteractionCSS(props.zoom)
-    // }
+   useInterval(() => {
+        setCount(count + 1);
+   }, counterIsRunning ? delay : null)
 
     /**
     * Markup
@@ -99,10 +109,10 @@ export const Controller = (props) => {
                 />
                 <Button
                     className="controller-button"
-                    // onClick={this.props.startInvestmentsWithdraw}
+                    onClick={() => {toggleCounter(!counterIsRunning)}}
                     text={"Start"}
                 />
-                <div className="controller-moves">0</div>
+                <div className="controller-moves">{count}</div>
                 <div className="controler-wrapper">
                     <FontAwesomeIcon icon={faTachometerAlt} size="lg"/>
                     <input 
