@@ -42,9 +42,7 @@ class Dropdown extends Component {
     * Methods
     */
 
-    handleOnClick = (i, el) => {
-        // this.props.chooseFromDropdown(el, this.props.elementsIndexInArray);
-        // this.props.chooseFromDropdown(el);
+    handleOnClick = (el) => {
         this.props.chooseOption(el)
     }
 
@@ -58,7 +56,7 @@ class Dropdown extends Component {
                {this.props.list.map((el,i) => {
                    return(
                         <div 
-                            onClick={() =>this.handleOnClick(i, el)}
+                            onClick={() =>this.handleOnClick(el)}
                             key={i}
                         >
                             {el}
