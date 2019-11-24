@@ -83,6 +83,10 @@ export const Controller = (props) => {
         setCount(count + 1);
    }, counterIsRunning ? delay : null)
 
+   const toggleNextButton = () => {
+        setCount(count + 1)
+        props.onNextHandler()
+   }
     /**
     * Markup
     */
@@ -104,13 +108,13 @@ export const Controller = (props) => {
                 </div>
                 <Button
                     className="controller-button"
-                    onClick={props.onNextHandler}
+                    onClick={toggleNextButton}
                     text={"Next"}
                 />
                 <Button
                     className="controller-button"
                     onClick={() => {toggleCounter(!counterIsRunning)}}
-                    text={"Start"}
+                    text={counterIsRunning ? "Stop" : "Start"}
                 />
                 <div className="controller-moves">{count}</div>
                 <div className="controler-wrapper">
