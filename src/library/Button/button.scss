@@ -33,6 +33,11 @@
     margin: 0 10px 0 10px;
     margin-top: 2px;
     width: 73px;
+    font-family: 'KoHo', sans-serif;
+    color: rgb(62, 70, 55);
+    &:hover {
+        background: rgb(240, 237, 80);
+    }
 }
 
 .infoGameRules-button {

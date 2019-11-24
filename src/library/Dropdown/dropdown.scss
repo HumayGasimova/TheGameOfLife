@@ -11,7 +11,7 @@
     }
     .dropdown-top-active-controller {
         border: 1px solid rgb(190, 190, 190);
-        box-shadow: 0px 0px 1px 1px rgb(157, 222, 248);
+        box-shadow: 0px 0px 1px 1px rgb(101, 109, 93);
         width: 171px;
         height: 19px;
         display: flex;
@@ -21,15 +21,15 @@
         position: absolute;
         background-color: white;
         border: 0.5px solid rgb(190, 190, 190);
-        box-shadow: 0px 0px 1px 1px rgb(157, 222, 248);
+        box-shadow: 0px 0px 1px 1px rgb(101, 109, 93);
         font-size: 15px;
         width: 172px;
         font-family: 'KoHo', sans-serif;
         >div{
             padding: 3px 0 3px 5px;
             &:hover{
-                background-color: rgb(33, 148, 255);
-                color: white;
+                background-color: rgb(101, 109, 93);
+                color: rgb(240, 237, 80);;
                 cursor: context-menu;
             }
         }
