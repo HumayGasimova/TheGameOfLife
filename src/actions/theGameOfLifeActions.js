@@ -54,9 +54,5 @@ export function onNextHandler() {
     };
 };
 
-export function startUpdatingDelay() {
-    return { 
-        type: actionTypes.START_UPDATING_DELAY
-    };
-};
+
 

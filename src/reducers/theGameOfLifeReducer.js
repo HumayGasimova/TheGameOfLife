@@ -83,8 +83,6 @@ const makeTheCellAlive = (state, action) => {
     });
 }
 
-
-
 const theGameOfLife = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHOOSE_FROM_DROPDOWN:
@@ -94,9 +92,7 @@ const theGameOfLife = (state = initialState, action) => {
         case actionTypes.GAME_INITIALIZATION:
             return state;        
         case actionTypes.ON_NEXT_HANDLER:
-            return state;  
-        case actionTypes.START_UPDATING_DELAY:
-            return state;  
+            return state; 
         case actionTypes.UPDATE_ARRAY_OF_CELLS:
             return updateArrayOfCells(state, action);
         case actionTypes.UPDATE_ZOOM:

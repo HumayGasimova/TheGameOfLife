@@ -92,7 +92,43 @@ export const Controller = (props) => {
 
    const speedHandler = (e) => {
        setSpeedRange(+(e.target.value));
+       switch(+(e.target.value)){
+            case 1:
+                setDelay(1000);
+                break;
+            case 2:
+               setDelay(900);
+               break;
+            case 3:
+               setDelay(800);
+               break;
+            case 4:
+               setDelay(700);
+               break;
+            case 5:
+               setDelay(600);
+               break;
+            case 6:
+               setDelay(500);
+               break;
+            case 7:
+                setDelay(400);
+                break;
+            case 8:
+                setDelay(300);
+                break;
+            case 9:
+                setDelay(200);
+                break;
+            case 10:
+                setDelay(100);
+                break;
+            case 11:
+                setDelay(50);
+                break;
+       }
        
+
    }
     /**
     * Markup
@@ -128,10 +164,10 @@ export const Controller = (props) => {
                     <FontAwesomeIcon icon={faTachometerAlt} size="lg"/>
                     <input 
                         type="range" 
-                        value={props.speedRange} 
+                        value={speedRange} 
                         min="1" 
                         max ="11" 
-                        onChange={props.startUpdatingDelay}
+                        onChange={()=>speedHandler(event)}
                     />
                 </div>
                 <div className="controler-wrapper">
@@ -151,6 +187,7 @@ export const Controller = (props) => {
                     text={"Info"}
                 />
                {infoIsShown ? <InfoGameRules toggleBackdrop={()=>setInfoIsShown(false)}/> : null} 
+               {       console.log(delay)}
             </div>
         );
     
@@ -160,8 +197,6 @@ export default connect(
     (state) => {
         return {
             zoom: Selectors.getZoomState(state),
-            speedRange: Selectors.getSpeedRangeState(state),
-            delay: Selectors.getDelayState(state),
         };
     },
     (dispatch) => {
@@ -170,7 +205,6 @@ export default connect(
             updateMapInteractionCSS: bindActionCreators(Actions.updateMapInteractionCSS, dispatch),
             startZooming: bindActionCreators(Actions.startZooming, dispatch),
             onNextHandler: bindActionCreators(Actions.onNextHandler, dispatch),
-            startUpdatingDelay: bindActionCreators(Actions.startUpdatingDelay, dispatch),
         };
     }
 )(Controller);
