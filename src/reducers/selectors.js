@@ -27,3 +27,17 @@ export const getTranslationState = createSelector(
     [getTranslation],
     (x) => x
 );
+
+const getSpeedRange = (state) => state.theGameOfLife.speedRange;
+
+export const getSpeedRangeState = createSelector(
+    [getSpeedRange],
+    (x) => x
+);
+
+const getDelay = (state) => state.theGameOfLife.delay;
+
+export const getDelayState = createSelector(
+    [getDelay],
+    (x) => x
+);

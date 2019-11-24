@@ -74,6 +74,7 @@ export const Controller = (props) => {
     const [count, setCount] = useState(0);
     const [counterIsRunning, toggleCounter] = useState(false);
     const [delay, setDelay] = useState(1000);
+    const [speedRange, setSpeedRange] = useState(1);
 
     /**
     * Methods
@@ -81,11 +82,17 @@ export const Controller = (props) => {
 
    useInterval(() => {
         setCount(count + 1);
+        props.onNextHandler();
    }, counterIsRunning ? delay : null)
 
    const toggleNextButton = () => {
-        setCount(count + 1)
-        props.onNextHandler()
+        setCount(count + 1);
+        props.onNextHandler();
+   }
+
+   const speedHandler = (e) => {
+       setSpeedRange(+(e.target.value));
+       
    }
     /**
     * Markup
@@ -121,10 +128,10 @@ export const Controller = (props) => {
                     <FontAwesomeIcon icon={faTachometerAlt} size="lg"/>
                     <input 
                         type="range" 
-                        // value={this.props.sizeEraser} 
+                        value={props.speedRange} 
                         min="1" 
                         max ="11" 
-                        // onChange={()=>this.onEraserSizeChange(event)}
+                        onChange={props.startUpdatingDelay}
                     />
                 </div>
                 <div className="controler-wrapper">
@@ -153,6 +160,8 @@ export default connect(
     (state) => {
         return {
             zoom: Selectors.getZoomState(state),
+            speedRange: Selectors.getSpeedRangeState(state),
+            delay: Selectors.getDelayState(state),
         };
     },
     (dispatch) => {
@@ -161,6 +170,7 @@ export default connect(
             updateMapInteractionCSS: bindActionCreators(Actions.updateMapInteractionCSS, dispatch),
             startZooming: bindActionCreators(Actions.startZooming, dispatch),
             onNextHandler: bindActionCreators(Actions.onNextHandler, dispatch),
+            startUpdatingDelay: bindActionCreators(Actions.startUpdatingDelay, dispatch),
         };
     }
 )(Controller);
