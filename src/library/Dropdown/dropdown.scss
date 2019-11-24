@@ -1,20 +1,21 @@
 .dropdown-controller {
-    width: 121px;
+    background: white;
+    // width: 121px;
     height: 19px;
     z-index: 400;
     .dropdown-top-controller {
-        margin-left: 5px;
+        // margin-left: 5px;
         border: 1px solid rgb(190, 190, 190);
-        width: 121px;
+        width: 131px;
         height: 19px;
         display: flex;
         justify-content: space-between;  
     }
     .dropdown-top-active-controller {
-        margin-left: 5px;
+        // margin-left: 5px;
         border: 1px solid rgb(190, 190, 190);
         box-shadow: 0px 0px 1px 1px rgb(157, 222, 248);
-        width: 121px;
+        width: 131px;
         height: 19px;
         display: flex;
         justify-content: space-between;
@@ -22,11 +23,11 @@
     .dropdown-bottom-controller {
         position: absolute;
         background-color: white;
-        margin-left: 5px;
+        // margin-left: 5px;
         border: 0.5px solid rgb(190, 190, 190);
         box-shadow: 0px 0px 1px 1px rgb(157, 222, 248);
         font-size: 15px;
-        width: 122px;
+        width: 132px;
         >div{
             padding: 3px 0 3px 5px;
             &:hover{

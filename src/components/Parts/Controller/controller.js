@@ -75,6 +75,8 @@ export const Controller = (props) => {
     const [counterIsRunning, toggleCounter] = useState(false);
     const [delay, setDelay] = useState(1000);
     const [speedRange, setSpeedRange] = useState(1);
+    const [showDropdown, setShowDropdown] = useState(false);
+    
 
     /**
     * Methods
@@ -138,14 +140,14 @@ export const Controller = (props) => {
             <div className="controller">
                 <div className="controler-wrapper">
                     <Dropdown 
-                        list={["1", "2", "3"]}
+                        list={["Clear", "Glider", "Small Exploder", "Exploder", "10 Cell Row", "Lightweight spaceship", "Tumbler", "Gosper Glider Gun"]}
                         dropdownClassName={"dropdown-controller"}
                         dropdownTopClassName={"dropdown-top-controller"}
                         dropdownTopActiveClassName={"dropdown-top-active-controller"}
                         dropdownBottomClassName={"dropdown-bottom-controller"}
                         dropdownTopTextClassName={"dropdown-top-text-controller"}
-                        // toggleDropdown={this.props.toggleDropdownInvestments}
-                        // showDropdown={this.props.showDropdownInvestments}
+                        toggleDropdown={() => setShowDropdown(!showDropdown)}
+                        showDropdown={showDropdown}
                         // chosenListDropdown={this.props.chosenListDropdown[0]}
                     />
                 </div>

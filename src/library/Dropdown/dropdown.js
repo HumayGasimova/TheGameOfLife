@@ -77,7 +77,7 @@ class Dropdown extends Component {
             <div className={this.props.dropdownClassName}>
                 <div 
                     className={this.props.showDropdown ? this.props.dropdownTopActiveClassName : this.props.dropdownTopClassName}
-                    onClick={()=>{this.props.toggleDropdown()}}
+                    onClick={this.props.toggleDropdown}
                 >
                     <div className={this.props.dropdownTopTextClassName}> 
                     Hey
