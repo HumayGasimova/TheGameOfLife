@@ -8,6 +8,23 @@ Array [
 ]
 `;
 
+exports[`theGameOfLifeReducer Dispatches the correct action and payload (makeTheCellAlive) 1`] = `
+Array [
+  Object {
+    "id": 34,
+    "type": "MAKE_THE_CELL_ALIVE",
+  },
+]
+`;
+
+exports[`theGameOfLifeReducer Dispatches the correct action and payload (onNextHandler) 1`] = `
+Array [
+  Object {
+    "type": "ON_NEXT_HANDLER",
+  },
+]
+`;
+
 exports[`theGameOfLifeReducer Dispatches the correct action and payload (startZooming) 1`] = `
 Array [
   Object {
