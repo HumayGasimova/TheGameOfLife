@@ -95,7 +95,7 @@ export default connect(
     null,
     (dispatch) => {
         return {
-            chooseFromDropdown: bindActionCreators(Actions.chooseFromDropdown, dispatch)
+            // chooseFromDropdown: bindActionCreators(Actions.chooseFromDropdown, dispatch)
         };
     }
 )(Dropdown);

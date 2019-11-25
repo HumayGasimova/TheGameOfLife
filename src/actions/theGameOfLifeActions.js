@@ -1,12 +1,5 @@
 import * as actionTypes from '../constants/actionTypes';
 
-export function chooseFromDropdown(chosen) {
-    return { 
-        type: actionTypes.CHOOSE_FROM_DROPDOWN,
-        chosen: chosen
-    };
-};
-
 export function updateArrayOfCells(array) {
     return { 
         type: actionTypes.UPDATE_ARRAY_OF_CELLS,

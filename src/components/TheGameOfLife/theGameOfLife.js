@@ -83,7 +83,7 @@ export const TheGameOfLife = (props) => {
 
         return(
             <div className="theGameOfLife">
-                {/* <Header/> */}
+                <Header/>
                 <PlayingArea/>
                 <Controller/>
             </div>

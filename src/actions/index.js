@@ -1,5 +1,4 @@
 export {
-    chooseFromDropdown,
     updateArrayOfCells,
     updateZoom,
     updateMapInteractionCSS,
