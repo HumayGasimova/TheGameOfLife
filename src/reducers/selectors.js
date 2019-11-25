@@ -41,3 +41,10 @@ export const getDelayState = createSelector(
     [getDelay],
     (x) => x
 );
+
+const getDropdownList = (state) => state.theGameOfLife.dropdownList;
+
+export const getDropdownListState = createSelector(
+    [getDropdownList],
+    (x) => x
+);

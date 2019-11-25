@@ -69,13 +69,21 @@ import {
 
 export const AddOptionBox = (props) => {
 
-    // const [infoIsShown, setInfoIsShown] = useState(false);
+    const [inputValue, setInputValue] = useState(false);
 
     /**
     * Methods
     */ 
 
-   
+    const onChangeHandler = (e) => {
+        setInputValue(e.target.value);
+    }
+
+    const addOptionHandler = () => {
+        props.addOption(inputValue);
+        props.toogleAddOptionBox();
+    }
+
     /**
     * Markup
     */
@@ -84,10 +92,10 @@ export const AddOptionBox = (props) => {
         <div className="addOptionBox">
            <div className="addOptionBox-wrapper">
                 <div className="addOptionBox-text">Please give a name to your project</div>
-                <input />
+                <input onChange={() => onChangeHandler(event)}/>
                 <Button
                     className="controller-button"
-                    // onClick={() => setInfoIsShown(true)}
+                    onClick={addOptionHandler}
                     text={"Add"}
                 />
            </div>
@@ -108,7 +116,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // updateZoom: bindActionCreators(Actions.updateZoom, dispatch),
+            addOption: bindActionCreators(Actions.addOption, dispatch),
         };
     }
 )(AddOptionBox);

@@ -287,7 +287,7 @@ export const Controller = (props) => {
         <div className="controller">
             <div className="controler-wrapper">
                 <Dropdown 
-                    list={["Clear", "Glider", "Small Exploder", "Exploder", "10 Cell Row", "Lightweight spaceship", "Tumbler", "Gosper Glider Gun"]}
+                    list={props.dropdownList}
                     dropdownClassName={"dropdown-controller"}
                     dropdownTopClassName={"dropdown-top-controller"}
                     dropdownTopActiveClassName={"dropdown-top-active-controller"}
@@ -356,6 +356,8 @@ export default connect(
     (state) => {
         return {
             zoom: Selectors.getZoomState(state),
+            dropdownList: Selectors.getDropdownListState(state),
+            
         };
     },
     (dispatch) => {

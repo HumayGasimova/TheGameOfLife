@@ -54,5 +54,10 @@ export function onNextHandler() {
     };
 };
 
-
+export function addOption(opt) {
+    return { 
+        type: actionTypes.ADD_OPTION,
+        option: opt
+    };
+};
 

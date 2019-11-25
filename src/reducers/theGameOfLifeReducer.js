@@ -24,7 +24,8 @@ export const initialState = {
     scale: 1,
     translation: { x: 1, y: 1 },
     speedRange: 1,
-    delay: 1000
+    delay: 1000,
+    dropdownList: ["Clear", "Glider", "Small Exploder", "Exploder", "10 Cell Row", "Lightweight spaceship", "Tumbler", "Gosper Glider Gun"]
 }
 
 const updateArrayOfCells = (state, action) => {
@@ -83,6 +84,15 @@ const makeTheCellAlive = (state, action) => {
     });
 }
 
+const addOption = (state, action) => {
+    let updatedDropdownList = [...state.dropdownList];
+    updatedDropdownList.push(action.option)
+    
+    return updateObject(state, {
+        dropdownList: updatedDropdownList
+    });
+}
+
 const theGameOfLife = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHOOSE_FROM_DROPDOWN:
@@ -101,6 +111,9 @@ const theGameOfLife = (state = initialState, action) => {
             return updateMapInteractionCSS(state, action);
         case actionTypes.MAKE_THE_CELL_ALIVE:
             return makeTheCellAlive(state, action);
+        case actionTypes.ADD_OPTION:
+            return addOption(state, action);
+
         default: 
             return state;
     }
