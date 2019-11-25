@@ -38,6 +38,11 @@
     &:hover {
         background: rgb(240, 237, 80);
     }
+    &:disabled{
+        color:rgb(150, 150, 150);
+        cursor: not-allowed;
+        background: none;
+    }
 }
 
 .infoGameRules-button {
