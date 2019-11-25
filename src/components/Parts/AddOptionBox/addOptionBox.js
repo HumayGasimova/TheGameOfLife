@@ -27,9 +27,7 @@ import {
 * Components
 */
 
-import Dropdown from '../../../library/Dropdown/dropdown';
 import Button from '../../../library/Button/button';
-import InfoGameRules from '../InfoGameRules/infoGameRules';
 import Backdrop from '../../../library/Backdrop/backdrop';
 
 /**
@@ -84,12 +82,19 @@ export const AddOptionBox = (props) => {
 
     return(
         <div className="addOptionBox">
-            <div className="addOptionBox-text">Please give a name to your project</div>
-           <input />
-           <Button
-                className="controller-button"
-                // onClick={() => setInfoIsShown(true)}
-                text={"Add"}
+           <div className="addOptionBox-wrapper">
+                <div className="addOptionBox-text">Please give a name to your project</div>
+                <input />
+                <Button
+                    className="controller-button"
+                    // onClick={() => setInfoIsShown(true)}
+                    text={"Add"}
+                />
+           </div>
+            <Backdrop  
+                show={true} 
+                onClick={props.toogleAddOptionBox}
+                className={"backdrop-infoGameRules"}
             />
         </div>
     );

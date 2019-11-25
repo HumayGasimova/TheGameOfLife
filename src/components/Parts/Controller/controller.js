@@ -343,11 +343,11 @@ export const Controller = (props) => {
             />
             <Button
                 className="controller-button"
-                // onClick={() => setInfoIsShown(true)}
+                onClick={() => toggleAddOptionBox(true)}
                 text={"Add"}
             />
-            {addOptionBoxIsShown ? <AddOptionBox/> : null}
-            {infoIsShown ? <InfoGameRules toggleBackdrop={()=>setInfoIsShown(false)}/> : null} 
+            {addOptionBoxIsShown ? <AddOptionBox toogleAddOptionBox={() => toggleAddOptionBox(false)}/> : null}
+            {infoIsShown ? <InfoGameRules toggleBackdrop={() => setInfoIsShown(false)}/> : null} 
         </div>
     );
 }
