@@ -164,4 +164,16 @@ describe('theGameOfLifeReducer', () => {
         expect(store.getActions()).toMatchSnapshot();
     });
    
+    it('Dispatches the correct action and payload (stateFromLocalStorage)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.STATE_FROM_LOCAL_STORAGE,
+                state: {a: 3, b: [1,2,3]}
+            }
+        ];
+
+        store.dispatch(Actions.stateFromLocalStorage({a: 3, b: [1,2,3]}));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });

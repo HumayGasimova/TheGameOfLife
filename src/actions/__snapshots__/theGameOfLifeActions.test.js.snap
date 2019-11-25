@@ -61,6 +61,22 @@ Array [
 ]
 `;
 
+exports[`theGameOfLifeReducer Dispatches the correct action and payload (stateFromLocalStorage) 1`] = `
+Array [
+  Object {
+    "state": Object {
+      "a": 3,
+      "b": Array [
+        1,
+        2,
+        3,
+      ],
+    },
+    "type": "STATE_FROM_LOCAL_STORAGE",
+  },
+]
+`;
+
 exports[`theGameOfLifeReducer Dispatches the correct action and payload (updateArrayOfCells) 1`] = `
 Array [
   Object {
