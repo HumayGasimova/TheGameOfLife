@@ -148,4 +148,20 @@ describe('theGameOfLifeReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+    it("should update property alive of the object with id equal to id passed through the action in cells array with opposit boolean", () => {
+        const action = { 
+            type: actionTypes.MAKE_THE_CELL_ALIVE,
+            id: 2
+        }
+        const initState = {
+            ...initialState, 
+            cells: [{id: 1, alive: false}, {id: 2, alive: false}]
+        }
+        const state = {
+            ...initialState, 
+            cells: [{id: 1, alive: false}, {id: 2, alive: true}]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
 });
