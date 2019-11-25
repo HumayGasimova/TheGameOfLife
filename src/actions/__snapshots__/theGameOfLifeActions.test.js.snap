@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`theGameOfLifeReducer Dispatches the correct action and payload (updateArrayOfCells) 1`] = `
+Array [
+  Object {
+    "array": Array [
+      Object {
+        "a": 2,
+        "b": 7,
+      },
+    ],
+    "type": "UPDATE_ARRAY_OF_CELLS",
+  },
+]
+`;

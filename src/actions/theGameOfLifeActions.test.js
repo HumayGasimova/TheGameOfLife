@@ -18,100 +18,23 @@ import * as actionTypes from "../constants/actionTypes";
 const mockStore = configureStore();
 const store = mockStore();
 
-describe('movingBallsActions', () => {
+describe('theGameOfLifeReducer', () => {
     beforeEach(() => { // Runs before each test in the suite
       store.clearActions();
     });
 
-    it('Dispatches the correct action and payload (moveCircleXCoordinate)', () => {
+    it('Dispatches the correct action and payload (updateArrayOfCells)', () => {
         const expectedActions = [
             {
-                type: actionTypes.MOVE_CIRCLE_X_COORDINATE,
-                dx: 467,
-                id: 3
+                type: actionTypes.UPDATE_ARRAY_OF_CELLS,
+                array: [{a: 2, b: 7}]
             }
         ];
 
-        store.dispatch(Actions.moveCircleXCoordinate(467, 3));
+        store.dispatch(Actions.updateArrayOfCells([{a: 2, b: 7}]));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
 
-    it('Dispatches the correct action and payload (moveCircleYCoordinate)', () => {
-        const expectedActions = [
-            {
-                type: actionTypes.MOVE_CIRCLE_Y_COORDINATE,
-                dy: 342,
-                id: 2
-            }
-        ];
-
-        store.dispatch(Actions.moveCircleYCoordinate(342, 2));
-        expect(store.getActions()).toEqual(expectedActions);
-        expect(store.getActions()).toMatchSnapshot();
-    });
-
-    it('Dispatches the correct action and payload (changeDirectionOfXMove)', () => {
-        const expectedActions = [
-            {
-                type: actionTypes.CHANGE_DIRECTION_OF_X_MOVE,
-                id: 7
-            }
-        ];
-
-        store.dispatch(Actions.changeDirectionOfXMove(7));
-        expect(store.getActions()).toEqual(expectedActions);
-        expect(store.getActions()).toMatchSnapshot();
-    });
-
-    it('Dispatches the correct action and payload (changeDirectionOfYMove)', () => {
-        const expectedActions = [
-            {
-                type: actionTypes.CHANGE_DIRECTION_OF_Y_MOVE,
-                id: 3
-            }
-        ];
-
-        store.dispatch(Actions.changeDirectionOfYMove(3));
-        expect(store.getActions()).toEqual(expectedActions);
-        expect(store.getActions()).toMatchSnapshot();
-    });
-
-    it('Dispatches the correct action and payload (fillCirclesArray)', () => {
-        const expectedActions = [
-            {
-                type: actionTypes.FILL_CIRCLES_ARRAY
-            }
-        ];
-
-        store.dispatch(Actions.fillCirclesArray());
-        expect(store.getActions()).toEqual(expectedActions);
-        expect(store.getActions()).toMatchSnapshot();
-    });
-
-    it('Dispatches the correct action and payload (updateCirclesArray)', () => {
-        const expectedActions = [
-            {
-                type: actionTypes.UPDATE_CIRCLES_ARRAY,
-                arr: [{a: 6},{b: 9}]
-            }
-        ];
-
-        store.dispatch(Actions.updateCirclesArray([{a: 6},{b: 9}]));
-        expect(store.getActions()).toEqual(expectedActions);
-        expect(store.getActions()).toMatchSnapshot();
-    });
-
-    it('Dispatches the correct action and payload (getNumbersOfBalls)', () => {
-        const expectedActions = [
-            {
-                type: actionTypes.GET_NUMBERS_OF_BALLS,
-                num: 57
-            }
-        ];
-
-        store.dispatch(Actions.getNumbersOfBalls(57));
-        expect(store.getActions()).toEqual(expectedActions);
-        expect(store.getActions()).toMatchSnapshot();
-    });
+   
 });
