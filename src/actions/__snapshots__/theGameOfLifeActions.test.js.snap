@@ -75,6 +75,15 @@ Array [
 ]
 `;
 
+exports[`theGameOfLifeReducer Dispatches the correct action and payload (updatePlayingArea) 1`] = `
+Array [
+  Object {
+    "option": "My poject",
+    "type": "UPDATE_PLAYING_AREA",
+  },
+]
+`;
+
 exports[`theGameOfLifeReducer Dispatches the correct action and payload (updateZoom) 1`] = `
 Array [
   Object {
