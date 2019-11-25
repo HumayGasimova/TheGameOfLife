@@ -3,7 +3,7 @@
 */
 
 import React,{
-    useState
+    useEffect
 } from 'react';
  
 import {
@@ -44,19 +44,41 @@ import * as Actions from '../../actions';
 * Utility
 */
 
-import * as Utility from '../../utility';
+import { 
+    useInterval 
+} from '../../Hooks/useInterval';
 
 /**
  * TheGameOfLife component definition and export
  */
 
-export const TheGameOfLife = () => {
+export const TheGameOfLife = (props) => {
 
 
     /**
     * Methods
     */ 
 
+   useInterval(()=>{
+        let jsonStore = JSON.stringify(props.store);
+        localStorage.setItem('store',jsonStore);
+   },5000)
+
+    useEffect(() => {
+        let state;
+        if(JSON.parse(localStorage.getItem('store')) === null){
+            props.gameInitialization();
+            props.makeTheCellAlive(4728);
+            props.makeTheCellAlive(4941);
+            props.makeTheCellAlive(5153);
+            props.makeTheCellAlive(5152);
+            props.makeTheCellAlive(5151);
+        }else{
+            state = JSON.parse(localStorage.getItem('store'));
+            props.stateFromLocalStorage(state);
+        }
+        
+    },[])
 
     /**
     * Markup
@@ -75,12 +97,14 @@ export const TheGameOfLife = () => {
 export default connect(
     (state) => {
         return {
-            // circles: Selectors.getCirclesState(state),
+            store: state.theGameOfLife
         };
     },
     (dispatch) => {
         return {
-            // moveCircleXCoordinate: bindActionCreators(Actions.moveCircleXCoordinate, dispatch),
+            stateFromLocalStorage: bindActionCreators(Actions.stateFromLocalStorage, dispatch),
+            gameInitialization: bindActionCreators(Actions.gameInitialization, dispatch),
+            makeTheCellAlive: bindActionCreators(Actions.makeTheCellAlive, dispatch),
         };
     }
 )(TheGameOfLife);

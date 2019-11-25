@@ -257,6 +257,7 @@ export default connect(
             makeTheCellAlive: bindActionCreators(Actions.makeTheCellAlive, dispatch),
             updatePlayingArea: bindActionCreators(Actions.updatePlayingArea, dispatch),
             deleteOption: bindActionCreators(Actions.deleteOption, dispatch), 
+            
         };
     }
 )(Controller);

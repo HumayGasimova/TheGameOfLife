@@ -10,5 +10,6 @@ export {
     addOption,
     savePlayingArea,
     updatePlayingArea,
-    deleteOption
+    deleteOption,
+    stateFromLocalStorage
 } from './theGameOfLifeActions';

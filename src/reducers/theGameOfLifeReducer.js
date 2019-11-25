@@ -173,13 +173,15 @@ const deleteOption = (state, action) => {
     let updatedDropdownList = [...state.dropdownList];
     let optionsIndexInDropdownListArray = updatedDropdownList.findIndex(x => x.name === action.option);
     updatedDropdownList.splice(optionsIndexInDropdownListArray, 1);
-
   
-    
     return updateObject(state, {
         playingArea: updatedPlayingArea,
         dropdownList: updatedDropdownList
     });
+}
+
+const stateFromLocalStorage = (state, action) => {
+    return action.state;
 }
 
 const theGameOfLife = (state = initialState, action) => {
@@ -208,6 +210,8 @@ const theGameOfLife = (state = initialState, action) => {
             return updatePlayingArea(state, action);
         case actionTypes.DELETE_OPTION:
             return deleteOption(state, action);
+        case actionTypes.STATE_FROM_LOCAL_STORAGE:
+            return stateFromLocalStorage(state, action);  
         default: 
             return state;
     }

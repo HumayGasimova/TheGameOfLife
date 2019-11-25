@@ -48,6 +48,14 @@ import * as Actions from '../../../actions';
 import * as Utility from '../../../utility';
 
 /**
+* Hooks
+*/
+
+import { 
+    useInterval 
+} from '../../../Hooks/useInterval';
+
+/**
  * PlayingArea component definition and export
  */
 
@@ -81,15 +89,6 @@ export const PlayingArea = (props) => {
         )
     }
 
-    useEffect(()=>{
-        props.gameInitialization();
-        props.makeTheCellAlive(4728);
-        props.makeTheCellAlive(4941);
-        props.makeTheCellAlive(5153);
-        props.makeTheCellAlive(5152);
-        props.makeTheCellAlive(5151);
-    },[])
-
     /**
     * Markup
     */
@@ -118,7 +117,7 @@ export default connect(
             cells: Selectors.getCellsState(state),
             zoom: Selectors.getZoomState(state),
             scale: Selectors.getScaleState(state),
-            translation: Selectors.getTranslationState(state),
+            translation: Selectors.getTranslationState(state)
         };
     },
     (dispatch) => {

@@ -82,3 +82,9 @@ export function deleteOption(opt) {
     };
 };
 
+export function stateFromLocalStorage(state) {
+    return { 
+        type: actionTypes.STATE_FROM_LOCAL_STORAGE,
+        state: state
+    };
+};
