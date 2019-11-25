@@ -81,6 +81,7 @@ export const AddOptionBox = (props) => {
 
     const addOptionHandler = () => {
         props.addOption(inputValue);
+        props.savePlayingArea(inputValue);
         props.toogleAddOptionBox();
     }
 
@@ -117,6 +118,7 @@ export default connect(
     (dispatch) => {
         return {
             addOption: bindActionCreators(Actions.addOption, dispatch),
+            savePlayingArea: bindActionCreators(Actions.savePlayingArea, dispatch),
         };
     }
 )(AddOptionBox);

@@ -79,7 +79,7 @@ export const Controller = (props) => {
     const [speedRange, setSpeedRange] = useState(1);
     const [showDropdown, setShowDropdown] = useState(false);
     const [dropdownOption, setDropdownOption] = useState("Clear");
-    const [addOptionBoxIsShown, toggleAddOptionBox] = useState(true);
+    const [addOptionBoxIsShown, toggleAddOptionBox] = useState(false);
     
 
     /**
@@ -345,6 +345,12 @@ export const Controller = (props) => {
                 className="controller-button"
                 onClick={() => toggleAddOptionBox(true)}
                 text={"Add"}
+            />
+             <Button
+                className="controller-button"
+                // onClick={() => toggleAddOptionBox(true)}
+                text={"Delete"}
+                // disabled={}
             />
             {addOptionBoxIsShown ? <AddOptionBox toogleAddOptionBox={() => toggleAddOptionBox(false)}/> : null}
             {infoIsShown ? <InfoGameRules toggleBackdrop={() => setInfoIsShown(false)}/> : null} 

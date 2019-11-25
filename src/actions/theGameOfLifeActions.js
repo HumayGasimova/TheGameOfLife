@@ -61,3 +61,9 @@ export function addOption(opt) {
     };
 };
 
+export function savePlayingArea(opt) {
+    return { 
+        type: actionTypes.SAVE_PLAYING_AREA,
+        option: opt
+    };
+};

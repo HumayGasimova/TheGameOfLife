@@ -25,8 +25,46 @@ export const initialState = {
     translation: { x: 1, y: 1 },
     speedRange: 1,
     delay: 1000,
-    dropdownList: ["Clear", "Glider", "Small Exploder", "Exploder", "10 Cell Row", "Lightweight spaceship", "Tumbler", "Gosper Glider Gun"]
-}
+    dropdownList: ["Clear", "Glider", "Small Exploder", "Exploder", "10 Cell Row", "Lightweight spaceship", "Tumbler", "Gosper Glider Gun"],
+    playingArea: [
+        { 
+            name: "Clear", 
+            aliveCells: []
+        },
+        { 
+            name: "Glider", 
+            aliveCells: [4728, 4941, 5153, 5152, 5151]
+        },
+        { 
+            name: "Small Exploder", 
+            aliveCells: [4728, 4939, 4940, 4941, 5151, 5364, 5153]
+        },
+        { 
+            name: "Exploder", 
+            aliveCells: [4514, 4726, 4938, 5150, 5362, 4516, 5364, 4518, 4730, 4942, 5154, 5366]
+        },
+        { 
+            name: "10 Cell Row", 
+            aliveCells: [4935, 4936, 4937, 4938, 4939, 4940, 4941, 4942, 4943, 4944]
+        },
+        { 
+            name: "Lightweight spaceship", 
+            aliveCells: [4727, 4728, 4729, 4730, 4938, 4942, 5154, 5362, 5365]
+        },
+        { 
+            name: "Tumbler", 
+            aliveCells: [4514, 4515, 4517, 4518, 4726, 4727, 4729, 4730, 4939, 4941, 5149, 5151, 5153, 5155, 5361, 5363, 5365, 5367, 5573, 5574, 5578, 5579]
+        },
+        { 
+            name: "Gosper Glider Gun", 
+            aliveCells: [
+                4515, 4302, 4301, 4513, 4725, 4294, 4293, 4081, 3870, 3871, 4083, 4074, 
+                4073, 3861, 3862, 3883, 3884, 3671, 3460, 3461, 3673, 3472, 3683, 3684, 
+                6005, 6006, 6217, 6007, 6430, 4956, 4957, 5168, 5380, 5170
+            ]
+        }
+    ]
+}    
 
 const updateArrayOfCells = (state, action) => {
     return updateObject(state, {
@@ -85,6 +123,23 @@ const makeTheCellAlive = (state, action) => {
 }
 
 const addOption = (state, action) => {
+    let updatedCells = [...state.cells];
+    let updatedPlayingArea = [...state.playingArea];
+    let arrayOfIdOfAliveCells = [];
+    let arrayOfAliveCells = updatedCells.filter(x => x.alive === true);
+    arrayOfAliveCells.map((el,i) => {
+        arrayOfIdOfAliveCells.push(el.id)
+    })
+    updatedPlayingArea.push({
+        name: action.option,
+        aliveCells: arrayOfIdOfAliveCells
+    })
+    return updateObject(state, {
+        playingArea: updatedPlayingArea
+    });
+}
+
+const savePlayingArea = (state, action) => {
     let updatedDropdownList = [...state.dropdownList];
     updatedDropdownList.push(action.option)
     
@@ -92,6 +147,8 @@ const addOption = (state, action) => {
         dropdownList: updatedDropdownList
     });
 }
+
+
 
 const theGameOfLife = (state = initialState, action) => {
     switch(action.type){
@@ -113,7 +170,8 @@ const theGameOfLife = (state = initialState, action) => {
             return makeTheCellAlive(state, action);
         case actionTypes.ADD_OPTION:
             return addOption(state, action);
-
+        case actionTypes.SAVE_PLAYING_AREA:
+            return savePlayingArea(state, action);
         default: 
             return state;
     }

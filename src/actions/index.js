@@ -7,5 +7,6 @@ export {
     gameInitialization,
     makeTheCellAlive,
     onNextHandler,
-    addOption
+    addOption,
+    savePlayingArea
 } from './theGameOfLifeActions';
