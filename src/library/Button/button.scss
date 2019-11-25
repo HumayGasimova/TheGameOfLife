@@ -34,14 +34,21 @@
     margin-top: 2px;
     width: 73px;
     font-family: 'KoHo', sans-serif;
-    color: rgb(62, 70, 55);
+    color: rgb(238, 238, 198);
+    background: rgb(62, 70, 55);
+    border: 1.5px solid black;
+    box-shadow: 0.5px 0.5px 2px 1px rgb(247, 245, 175);
+    border-radius: 4px;
     &:hover {
         background: rgb(240, 237, 80);
+        color: rgb(62, 70, 55);
+        border: 1.5px solid rgb(161, 160, 84);
     }
     &:disabled{
-        color:rgb(150, 150, 150);
+        color:rgb(180, 180, 180);
         cursor: not-allowed;
         background: none;
+        border: 1.5px solid rgb(84, 161, 84);
     }
 }
 
@@ -49,4 +56,22 @@
     margin: 0 10px 0 540px;
     margin-top: 2px;
     width: 73px;
+    height: 30px;
+    font-family: 'KoHo', sans-serif;
+    color: rgb(238, 238, 198);
+    background: rgb(62, 70, 55);
+    border: 1.5px solid black;
+    box-shadow: 0.5px 0.5px 2px 1px rgb(247, 245, 175);
+    border-radius: 4px;
+    &:hover {
+        background: rgb(240, 237, 80);
+        color: rgb(62, 70, 55);
+        border: 1.5px solid rgb(161, 160, 84);
+    }
+    &:disabled{
+        color:rgb(180, 180, 180);
+        cursor: not-allowed;
+        background: none;
+        border: 1.5px solid rgb(84, 161, 84);
+    }
 }
