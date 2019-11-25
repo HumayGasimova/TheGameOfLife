@@ -1,0 +1,28 @@
+.addOptionBox {
+    border: 1.5px solid rgb(240, 237, 80);
+    width: 400px;
+    height: 150px;
+    position: absolute;
+    top: 200px;
+    left: 520px;
+    background: rgb(101, 109, 93);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    .addOptionBox-text {
+        font-family: 'KoHo', sans-serif;
+        font-size: 17px;
+        color: rgb(145, 168, 151);
+        font-weight: bold;
+    }
+
+    & input {
+        width: 300px;
+        height: 30px;
+        border-radius: 4px;
+        border: 2px solid rgb(145, 168, 151);
+        padding-left: 5px;
+    }
+    
+}

@@ -31,6 +31,7 @@ import Dropdown from '../../../library/Dropdown/dropdown';
 import Button from '../../../library/Button/button';
 import InfoGameRules from '../InfoGameRules/infoGameRules';
 import Backdrop from '../../../library/Backdrop/backdrop';
+import AddOptionBox from '../AddOptionBox/addOptionBox';
 
 /**
 * Styles
@@ -78,6 +79,8 @@ export const Controller = (props) => {
     const [speedRange, setSpeedRange] = useState(1);
     const [showDropdown, setShowDropdown] = useState(false);
     const [dropdownOption, setDropdownOption] = useState("Clear");
+    const [addOptionBoxIsShown, toggleAddOptionBox] = useState(true);
+    
 
     /**
     * Methods
@@ -338,6 +341,12 @@ export const Controller = (props) => {
                 onClick={() => setInfoIsShown(true)}
                 text={"Info"}
             />
+            <Button
+                className="controller-button"
+                // onClick={() => setInfoIsShown(true)}
+                text={"Add"}
+            />
+            {addOptionBoxIsShown ? <AddOptionBox/> : null}
             {infoIsShown ? <InfoGameRules toggleBackdrop={()=>setInfoIsShown(false)}/> : null} 
         </div>
     );
