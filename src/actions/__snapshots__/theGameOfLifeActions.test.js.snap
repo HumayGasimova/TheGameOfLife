@@ -9,6 +9,15 @@ Array [
 ]
 `;
 
+exports[`theGameOfLifeReducer Dispatches the correct action and payload (deleteOption) 1`] = `
+Array [
+  Object {
+    "option": "My poject",
+    "type": "DELETE_OPTION",
+  },
+]
+`;
+
 exports[`theGameOfLifeReducer Dispatches the correct action and payload (gameInitialization) 1`] = `
 Array [
   Object {
