@@ -13,3 +13,12 @@ Array [
   },
 ]
 `;
+
+exports[`theGameOfLifeReducer Dispatches the correct action and payload (updateZoom) 1`] = `
+Array [
+  Object {
+    "type": "UPDATE_ZOOM",
+    "val": 3,
+  },
+]
+`;
