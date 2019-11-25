@@ -74,18 +74,18 @@ export const PlayingArea = (props) => {
 
     const renderCells = () => {
         return(
-            <div className="playingArea-cells">{props.cells.map((el,i)=>{
-                return(
-                    <div key={i}>
-                        <Cell 
-                            onClick={() => handleOnClick(el.id)}
-                            cell={el}
-                        />
-                    </div>
-                )
-            })
-
-            }</div>
+            <div className="playingArea-cells">
+                {props.cells.map((el,i)=>{
+                    return(
+                        <div key={i}>
+                            <Cell 
+                                onClick={() => handleOnClick(el.id)}
+                                cell={el}
+                            />
+                        </div>
+                    )
+                })}
+            </div>
         )
     }
 
@@ -93,21 +93,21 @@ export const PlayingArea = (props) => {
     * Markup
     */
 
-        return(
-            <MapInteractionCSS
-                scale={props.scale}
-                translation={props.translation}
-                disableZoom={true}
-                disablePan={true}
-                // showControls={true}
-                // onChange={({ scale, translation }, zoom) => mapInteractionCSSOnChange({ scale, translation }, props.zoom)}
-            >
-                <div className="playingArea">
-                    {renderCells()}
-                </div>
-            </MapInteractionCSS>
-           
-        );
+    return(
+        <MapInteractionCSS
+            scale={props.scale}
+            translation={props.translation}
+            disableZoom={true}
+            disablePan={true}
+            // showControls={true}
+            // onChange={({ scale, translation }, zoom) => mapInteractionCSSOnChange({ scale, translation }, props.zoom)}
+        >
+            <div className="playingArea">
+                {renderCells()}
+            </div>
+        </MapInteractionCSS>
+        
+    );
     
 }
 

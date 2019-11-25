@@ -25,6 +25,13 @@
         font-size: 15px;
         width: 172px;
         font-family: 'KoHo', sans-serif;
+        height: 107px;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            // width: 0px;  /* Remove scrollbar space */
+            // background: transparent;  /* Optional: just make scrollbar invisible */
+            display: none;
+        }
         >div{
             padding: 3px 0 3px 5px;
             &:hover{
@@ -50,3 +57,5 @@ img {
     height: 20px;
     transform: rotateZ(180deg);
 }
+
+
