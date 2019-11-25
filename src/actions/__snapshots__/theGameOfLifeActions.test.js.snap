@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`theGameOfLifeReducer Dispatches the correct action and payload (addOption) 1`] = `
+Array [
+  Object {
+    "option": "My poject",
+    "type": "ADD_OPTION",
+  },
+]
+`;
+
 exports[`theGameOfLifeReducer Dispatches the correct action and payload (gameInitialization) 1`] = `
 Array [
   Object {

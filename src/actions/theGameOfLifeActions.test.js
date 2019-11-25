@@ -111,5 +111,18 @@ describe('theGameOfLifeReducer', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (addOption)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.ADD_OPTION,
+                option: "My poject"
+            }
+        ];
+
+        store.dispatch(Actions.addOption("My poject"));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
    
 });
