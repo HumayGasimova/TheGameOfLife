@@ -14,6 +14,15 @@ Array [
 ]
 `;
 
+exports[`theGameOfLifeReducer Dispatches the correct action and payload (updateMapInteractionCSS) 1`] = `
+Array [
+  Object {
+    "type": "UPDATE_MAP_INTERACTION_CSS",
+    "zoom": 2,
+  },
+]
+`;
+
 exports[`theGameOfLifeReducer Dispatches the correct action and payload (updateZoom) 1`] = `
 Array [
   Object {

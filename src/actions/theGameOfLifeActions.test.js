@@ -49,6 +49,17 @@ describe('theGameOfLifeReducer', () => {
         expect(store.getActions()).toMatchSnapshot();
     });
 
+    it('Dispatches the correct action and payload (updateMapInteractionCSS)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_MAP_INTERACTION_CSS,
+                zoom: 2
+            }
+        ];
 
+        store.dispatch(Actions.updateMapInteractionCSS(2));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
    
 });
