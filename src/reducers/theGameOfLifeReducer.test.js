@@ -148,7 +148,7 @@ describe('theGameOfLifeReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
-    it("should update property alive of the object with id equal to id passed through the action in cells array with opposit boolean", () => {
+    it("should update property alive of the object with id equal to id passed through the action in cells array with opposite boolean", () => {
         const action = { 
             type: actionTypes.MAKE_THE_CELL_ALIVE,
             id: 2
@@ -164,4 +164,22 @@ describe('theGameOfLifeReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+    it("should update playingArea by adding object with property - name set to the value passed through the action and property aliveCells set to array of all alive cells", () => {
+        const action = { 
+            type: actionTypes.ADD_OPTION,
+            option: "My project"
+        }
+        const initState = {
+            ...initialState, 
+            cells: [{id: 1, alive: false}, {id: 2, alive: true}],
+            playingArea: [{name: "example", aliveCells: [1, 2, 3]}]
+
+        }
+        const state = {
+            ...initialState, 
+            cells: [{id: 1, alive: false}, {id: 2, alive: true}],
+            playingArea: [{name: "example", aliveCells: [1, 2, 3]}, {name: "My project", aliveCells: [2]}]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
 });
