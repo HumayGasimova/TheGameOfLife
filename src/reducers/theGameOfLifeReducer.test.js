@@ -199,4 +199,23 @@ describe('theGameOfLifeReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     });
+
+    it("should update alive propertiy of objects with property id given in property aliveCells in the object which property name is equal to the option passed through the action in the playingArea array", () => {
+        const action = { 
+            type: actionTypes.UPDATE_PLAYING_AREA,
+            option: "My project"
+        }
+        const initState = {
+            ...initialState,
+            playingArea: [{name: "example", aliveCells: [1, 2, 3]}, {name: "My project", aliveCells: [2,3]}], 
+            cells: [{id: 1, alive: false}, {id: 2, alive: false}, {id: 3, alive: false}]
+        }
+        const state = {
+            ...initialState, 
+            playingArea: [{name: "example", aliveCells: [1, 2, 3]}, {name: "My project", aliveCells: [2,3]}],
+            cells: [{id: 1, alive: false}, {id: 2, alive: true}, {id: 3, alive: true}]
+       
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
 });
