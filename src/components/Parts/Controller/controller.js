@@ -143,6 +143,14 @@ export const Controller = (props) => {
         setShowDropdown(false);
     }
 
+    const deleteHandler = () => {
+        if(confirm("Are you sure you want to delete the project?")){
+            props.deleteOption(dropdownOption);
+            props.gameInitialization();
+            setDropdownOption("Clear")
+        }
+    }
+
     /**
     * Markup
     */
@@ -212,7 +220,7 @@ export const Controller = (props) => {
             />
              <Button
                 className="controller-button"
-                // onClick={() => toggleAddOptionBox(true)}
+                onClick={deleteHandler}
                 text={"Delete"}
                 disabled={ 
                     dropdownOption === "Clear" || 
@@ -226,8 +234,7 @@ export const Controller = (props) => {
                 }
             />
             {addOptionBoxIsShown ? <AddOptionBox toogleAddOptionBox={() => toggleAddOptionBox(false)}/> : null}
-            {infoIsShown ? <InfoGameRules toggleBackdrop={() => setInfoIsShown(false)}/> : null} 
-            {console.log(dropdownOption)}
+            {infoIsShown ? <InfoGameRules toggleBackdrop={() => setInfoIsShown(false)}/> : null}
         </div>
     );
 }
@@ -249,6 +256,7 @@ export default connect(
             gameInitialization: bindActionCreators(Actions.gameInitialization, dispatch),
             makeTheCellAlive: bindActionCreators(Actions.makeTheCellAlive, dispatch),
             updatePlayingArea: bindActionCreators(Actions.updatePlayingArea, dispatch),
+            deleteOption: bindActionCreators(Actions.deleteOption, dispatch), 
         };
     }
 )(Controller);

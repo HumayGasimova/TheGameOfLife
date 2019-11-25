@@ -165,6 +165,23 @@ const updatePlayingArea = (state, action) => {
     });
 }
 
+const deleteOption = (state, action) => {
+    let updatedPlayingArea = [...state.playingArea];
+    let optionsIndexInPlayingAreaArray = updatedPlayingArea.findIndex(x => x.name === action.option);
+    updatedPlayingArea.splice(optionsIndexInPlayingAreaArray, 1);
+
+    let updatedDropdownList = [...state.dropdownList];
+    let optionsIndexInDropdownListArray = updatedDropdownList.findIndex(x => x.name === action.option);
+    updatedDropdownList.splice(optionsIndexInDropdownListArray, 1);
+
+  
+    
+    return updateObject(state, {
+        playingArea: updatedPlayingArea,
+        dropdownList: updatedDropdownList
+    });
+}
+
 const theGameOfLife = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHOOSE_FROM_DROPDOWN:
@@ -189,6 +206,8 @@ const theGameOfLife = (state = initialState, action) => {
             return savePlayingArea(state, action);
         case actionTypes.UPDATE_PLAYING_AREA:
             return updatePlayingArea(state, action);
+        case actionTypes.DELETE_OPTION:
+            return deleteOption(state, action);
         default: 
             return state;
     }

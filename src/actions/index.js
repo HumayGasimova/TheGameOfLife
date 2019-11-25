@@ -9,5 +9,6 @@ export {
     onNextHandler,
     addOption,
     savePlayingArea,
-    updatePlayingArea
+    updatePlayingArea,
+    deleteOption
 } from './theGameOfLifeActions';

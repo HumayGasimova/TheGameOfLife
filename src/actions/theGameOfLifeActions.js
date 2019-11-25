@@ -74,3 +74,11 @@ export function updatePlayingArea(opt) {
         option: opt
     };
 };
+
+export function deleteOption(opt) {
+    return { 
+        type: actionTypes.DELETE_OPTION,
+        option: opt
+    };
+};
+
