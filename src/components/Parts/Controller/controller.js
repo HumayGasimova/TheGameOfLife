@@ -204,7 +204,7 @@ export const Controller = (props) => {
                     value={props.zoom} 
                     min="1" 
                     max ="5" 
-                    onChange={()=>props.startZooming(event)}
+                    onChange={()=>props.startZooming(event.target.value)}
                 />
             </div>
             

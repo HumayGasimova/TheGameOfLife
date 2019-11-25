@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`theGameOfLifeReducer Dispatches the correct action and payload (startZooming) 1`] = `
+Array [
+  Object {
+    "type": "START_ZOOMING",
+    "zoom": 5,
+  },
+]
+`;
+
 exports[`theGameOfLifeReducer Dispatches the correct action and payload (updateArrayOfCells) 1`] = `
 Array [
   Object {

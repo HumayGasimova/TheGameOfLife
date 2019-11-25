@@ -21,10 +21,10 @@ export function updateMapInteractionCSS(val) {
     };
 };
 
-export function startZooming(event) {
+export function startZooming(val) {
     return { 
         type: actionTypes.START_ZOOMING,
-        event: event
+        zoom: val
     };
 };
 

@@ -29,10 +29,9 @@ export const startZoomingEpic = (action$) =>
     action$.pipe(
         ofType(actionTypes.START_ZOOMING),
         mergeMap(action => {
-            let zoomValue = action.event.target.value;
             return of(
-                   Actions.updateZoom(+zoomValue),
-                   Actions.updateMapInteractionCSS(zoomValue),
+                   Actions.updateZoom(+action.zoom),
+                   Actions.updateMapInteractionCSS(action.zoom),
                 ) 
         })
     )
