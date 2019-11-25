@@ -182,4 +182,21 @@ describe('theGameOfLifeReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     });
+    
+    it("should update dropdownList by adding the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.SAVE_PLAYING_AREA,
+            option: "My project"
+        }
+        const initState = {
+            ...initialState, 
+            dropdownList: ["example1", "example2"]
+
+        }
+        const state = {
+            ...initialState, 
+            dropdownList: ["example1", "example2", "My project"]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
 });
