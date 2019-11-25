@@ -127,6 +127,7 @@ const addOption = (state, action) => {
     let updatedPlayingArea = [...state.playingArea];
     let arrayOfIdOfAliveCells = [];
     let arrayOfAliveCells = updatedCells.filter(x => x.alive === true);
+
     arrayOfAliveCells.map((el,i) => {
         arrayOfIdOfAliveCells.push(el.id)
     })
@@ -148,7 +149,21 @@ const savePlayingArea = (state, action) => {
     });
 }
 
+const updatePlayingArea = (state, action) => {
+    let updatedCells = [...state.cells];
+    let updatedPlayingArea = [...state.playingArea];
+    let optionsAliveCells = updatedPlayingArea.find(x => x.name === action.option).aliveCells;
 
+    optionsAliveCells.map((el,i) => {
+        let cell = updatedCells.find(x => x.id === el);
+        cell.alive = true;
+        updatedCells.splice(el-1, 1, cell)
+    })
+    
+    return updateObject(state, {
+        cells: updatedCells
+    });
+}
 
 const theGameOfLife = (state = initialState, action) => {
     switch(action.type){
@@ -172,6 +187,8 @@ const theGameOfLife = (state = initialState, action) => {
             return addOption(state, action);
         case actionTypes.SAVE_PLAYING_AREA:
             return savePlayingArea(state, action);
+        case actionTypes.UPDATE_PLAYING_AREA:
+            return updatePlayingArea(state, action);
         default: 
             return state;
     }

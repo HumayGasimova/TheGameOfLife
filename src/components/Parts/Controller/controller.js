@@ -136,147 +136,151 @@ export const Controller = (props) => {
     }
 
     const chooseOption = (el) => {
-        setDropdownOption(el)
-        switch (el){
-            case "Clear":
-                props.gameInitialization();
-                break;
-            case "Glider":
-                props.gameInitialization();
-                setShowDropdown(false);
-                setCount(0);
-                props.makeTheCellAlive(4728);
-                props.makeTheCellAlive(4941);
-                props.makeTheCellAlive(5153);
-                props.makeTheCellAlive(5152);
-                props.makeTheCellAlive(5151);
-                break;
-            case "Small Exploder":
-                props.gameInitialization();
-                setShowDropdown(false);
-                setCount(0);
-                props.makeTheCellAlive(4728);
-                props.makeTheCellAlive(4939);
-                props.makeTheCellAlive(4940);
-                props.makeTheCellAlive(4941);
-                props.makeTheCellAlive(5151);
-                props.makeTheCellAlive(5364);
-                props.makeTheCellAlive(5153);
-                break;
-            case "Exploder":
-                props.gameInitialization();
-                setShowDropdown(false);
-                setCount(0);
-                props.makeTheCellAlive(4514);
-                props.makeTheCellAlive(4726);
-                props.makeTheCellAlive(4938);
-                props.makeTheCellAlive(5150);
-                props.makeTheCellAlive(5362);
-                props.makeTheCellAlive(4516);
-                props.makeTheCellAlive(5364);
-                props.makeTheCellAlive(4518);
-                props.makeTheCellAlive(4730);
-                props.makeTheCellAlive(4942);
-                props.makeTheCellAlive(5154);
-                props.makeTheCellAlive(5366);
-                break;
-            case "10 Cell Row":
-                props.gameInitialization();
-                setShowDropdown(false);
-                setCount(0);
-                props.makeTheCellAlive(4935);
-                props.makeTheCellAlive(4936);
-                props.makeTheCellAlive(4937);
-                props.makeTheCellAlive(4938);
-                props.makeTheCellAlive(4939);
-                props.makeTheCellAlive(4940);
-                props.makeTheCellAlive(4941);
-                props.makeTheCellAlive(4942);
-                props.makeTheCellAlive(4943);
-                props.makeTheCellAlive(4944);
-                break;
-            case "Lightweight spaceship":
-                props.gameInitialization();
-                setShowDropdown(false);
-                setCount(0);
-                props.makeTheCellAlive(4727);
-                props.makeTheCellAlive(4728);
-                props.makeTheCellAlive(4729);
-                props.makeTheCellAlive(4730);
-                props.makeTheCellAlive(4938);
-                props.makeTheCellAlive(4942);
-                props.makeTheCellAlive(5154);
-                props.makeTheCellAlive(5362);
-                props.makeTheCellAlive(5365);
-                break;
-            case "Tumbler":
-                props.gameInitialization();
-                setShowDropdown(false);
-                setCount(0);
-                props.makeTheCellAlive(4514);
-                props.makeTheCellAlive(4515);
-                props.makeTheCellAlive(4517);
-                props.makeTheCellAlive(4518);
-                props.makeTheCellAlive(4726);
-                props.makeTheCellAlive(4727);
-                props.makeTheCellAlive(4729);
-                props.makeTheCellAlive(4730);
-                props.makeTheCellAlive(4939);
-                props.makeTheCellAlive(4941);
-                props.makeTheCellAlive(5149);
-                props.makeTheCellAlive(5151);
-                props.makeTheCellAlive(5153);
-                props.makeTheCellAlive(5155);
-                props.makeTheCellAlive(5361);
-                props.makeTheCellAlive(5363);
-                props.makeTheCellAlive(5365);
-                props.makeTheCellAlive(5367);
-                props.makeTheCellAlive(5573);
-                props.makeTheCellAlive(5574);
-                props.makeTheCellAlive(5578);
-                props.makeTheCellAlive(5579);
-                break;
-            case "Gosper Glider Gun":
-                props.gameInitialization();
-                setShowDropdown(false);
-                setCount(0);
-                props.makeTheCellAlive(4515);
-                props.makeTheCellAlive(4302);
-                props.makeTheCellAlive(4301);
-                props.makeTheCellAlive(4513);
-                props.makeTheCellAlive(4725);
-                props.makeTheCellAlive(4294);
-                props.makeTheCellAlive(4293);
-                props.makeTheCellAlive(4081);
-                props.makeTheCellAlive(3870);
-                props.makeTheCellAlive(3871);
-                props.makeTheCellAlive(4083);
-                props.makeTheCellAlive(4074);
-                props.makeTheCellAlive(4073);
-                props.makeTheCellAlive(3861);
-                props.makeTheCellAlive(3862);
-                props.makeTheCellAlive(3883);
-                props.makeTheCellAlive(3884);
-                props.makeTheCellAlive(3671);
-                props.makeTheCellAlive(3460);
-                props.makeTheCellAlive(3461);
-                props.makeTheCellAlive(3673);
-                props.makeTheCellAlive(3471);
-                props.makeTheCellAlive(3472);
-                props.makeTheCellAlive(3683);
-                props.makeTheCellAlive(3684);
-                props.makeTheCellAlive(6005);
-                props.makeTheCellAlive(6006);
-                props.makeTheCellAlive(6217);
-                props.makeTheCellAlive(6007);
-                props.makeTheCellAlive(6430);
-                props.makeTheCellAlive(4956);
-                props.makeTheCellAlive(4957);
-                props.makeTheCellAlive(5168);
-                props.makeTheCellAlive(5380);
-                props.makeTheCellAlive(5170);
-                break;
-        }
+        props.gameInitialization();
+        setDropdownOption(el);
+        setCount(0);
+        props.updatePlayingArea(el)
+        setShowDropdown(false);
+        // switch (el){
+        //     case "Clear":
+        //         props.gameInitialization();
+        //         break;
+        //     case "Glider":
+        //         props.gameInitialization();
+        //         setShowDropdown(false);
+        //         setCount(0);
+        //         props.makeTheCellAlive(4728);
+        //         props.makeTheCellAlive(4941);
+        //         props.makeTheCellAlive(5153);
+        //         props.makeTheCellAlive(5152);
+        //         props.makeTheCellAlive(5151);
+        //         break;
+        //     case "Small Exploder":
+        //         props.gameInitialization();
+        //         setShowDropdown(false);
+        //         setCount(0);
+        //         props.makeTheCellAlive(4728);
+        //         props.makeTheCellAlive(4939);
+        //         props.makeTheCellAlive(4940);
+        //         props.makeTheCellAlive(4941);
+        //         props.makeTheCellAlive(5151);
+        //         props.makeTheCellAlive(5364);
+        //         props.makeTheCellAlive(5153);
+        //         break;
+        //     case "Exploder":
+        //         props.gameInitialization();
+        //         setShowDropdown(false);
+        //         setCount(0);
+        //         props.makeTheCellAlive(4514);
+        //         props.makeTheCellAlive(4726);
+        //         props.makeTheCellAlive(4938);
+        //         props.makeTheCellAlive(5150);
+        //         props.makeTheCellAlive(5362);
+        //         props.makeTheCellAlive(4516);
+        //         props.makeTheCellAlive(5364);
+        //         props.makeTheCellAlive(4518);
+        //         props.makeTheCellAlive(4730);
+        //         props.makeTheCellAlive(4942);
+        //         props.makeTheCellAlive(5154);
+        //         props.makeTheCellAlive(5366);
+        //         break;
+        //     case "10 Cell Row":
+        //         props.gameInitialization();
+        //         setShowDropdown(false);
+        //         setCount(0);
+        //         props.makeTheCellAlive(4935);
+        //         props.makeTheCellAlive(4936);
+        //         props.makeTheCellAlive(4937);
+        //         props.makeTheCellAlive(4938);
+        //         props.makeTheCellAlive(4939);
+        //         props.makeTheCellAlive(4940);
+        //         props.makeTheCellAlive(4941);
+        //         props.makeTheCellAlive(4942);
+        //         props.makeTheCellAlive(4943);
+        //         props.makeTheCellAlive(4944);
+        //         break;
+        //     case "Lightweight spaceship":
+        //         props.gameInitialization();
+        //         setShowDropdown(false);
+        //         setCount(0);
+        //         props.makeTheCellAlive(4727);
+        //         props.makeTheCellAlive(4728);
+        //         props.makeTheCellAlive(4729);
+        //         props.makeTheCellAlive(4730);
+        //         props.makeTheCellAlive(4938);
+        //         props.makeTheCellAlive(4942);
+        //         props.makeTheCellAlive(5154);
+        //         props.makeTheCellAlive(5362);
+        //         props.makeTheCellAlive(5365);
+        //         break;
+        //     case "Tumbler":
+        //         props.gameInitialization();
+        //         setShowDropdown(false);
+        //         setCount(0);
+        //         props.makeTheCellAlive(4514);
+        //         props.makeTheCellAlive(4515);
+        //         props.makeTheCellAlive(4517);
+        //         props.makeTheCellAlive(4518);
+        //         props.makeTheCellAlive(4726);
+        //         props.makeTheCellAlive(4727);
+        //         props.makeTheCellAlive(4729);
+        //         props.makeTheCellAlive(4730);
+        //         props.makeTheCellAlive(4939);
+        //         props.makeTheCellAlive(4941);
+        //         props.makeTheCellAlive(5149);
+        //         props.makeTheCellAlive(5151);
+        //         props.makeTheCellAlive(5153);
+        //         props.makeTheCellAlive(5155);
+        //         props.makeTheCellAlive(5361);
+        //         props.makeTheCellAlive(5363);
+        //         props.makeTheCellAlive(5365);
+        //         props.makeTheCellAlive(5367);
+        //         props.makeTheCellAlive(5573);
+        //         props.makeTheCellAlive(5574);
+        //         props.makeTheCellAlive(5578);
+        //         props.makeTheCellAlive(5579);
+        //         break;
+        //     case "Gosper Glider Gun":
+        //         props.gameInitialization();
+        //         setShowDropdown(false);
+        //         setCount(0);
+        //         props.makeTheCellAlive(4515);
+        //         props.makeTheCellAlive(4302);
+        //         props.makeTheCellAlive(4301);
+        //         props.makeTheCellAlive(4513);
+        //         props.makeTheCellAlive(4725);
+        //         props.makeTheCellAlive(4294);
+        //         props.makeTheCellAlive(4293);
+        //         props.makeTheCellAlive(4081);
+        //         props.makeTheCellAlive(3870);
+        //         props.makeTheCellAlive(3871);
+        //         props.makeTheCellAlive(4083);
+        //         props.makeTheCellAlive(4074);
+        //         props.makeTheCellAlive(4073);
+        //         props.makeTheCellAlive(3861);
+        //         props.makeTheCellAlive(3862);
+        //         props.makeTheCellAlive(3883);
+        //         props.makeTheCellAlive(3884);
+        //         props.makeTheCellAlive(3671);
+        //         props.makeTheCellAlive(3460);
+        //         props.makeTheCellAlive(3461);
+        //         props.makeTheCellAlive(3673);
+        //         props.makeTheCellAlive(3471);
+        //         props.makeTheCellAlive(3472);
+        //         props.makeTheCellAlive(3683);
+        //         props.makeTheCellAlive(3684);
+        //         props.makeTheCellAlive(6005);
+        //         props.makeTheCellAlive(6006);
+        //         props.makeTheCellAlive(6217);
+        //         props.makeTheCellAlive(6007);
+        //         props.makeTheCellAlive(6430);
+        //         props.makeTheCellAlive(4956);
+        //         props.makeTheCellAlive(4957);
+        //         props.makeTheCellAlive(5168);
+        //         props.makeTheCellAlive(5380);
+        //         props.makeTheCellAlive(5170);
+        //         break;
+        // }
     }
 
     /**
@@ -374,6 +378,7 @@ export default connect(
             onNextHandler: bindActionCreators(Actions.onNextHandler, dispatch),
             gameInitialization: bindActionCreators(Actions.gameInitialization, dispatch),
             makeTheCellAlive: bindActionCreators(Actions.makeTheCellAlive, dispatch),
+            updatePlayingArea: bindActionCreators(Actions.updatePlayingArea, dispatch),
         };
     }
 )(Controller);

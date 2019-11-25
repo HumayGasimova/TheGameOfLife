@@ -67,3 +67,10 @@ export function savePlayingArea(opt) {
         option: opt
     };
 };
+
+export function updatePlayingArea(opt) {
+    return { 
+        type: actionTypes.UPDATE_PLAYING_AREA,
+        option: opt
+    };
+};

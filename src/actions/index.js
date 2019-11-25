@@ -8,5 +8,6 @@ export {
     makeTheCellAlive,
     onNextHandler,
     addOption,
-    savePlayingArea
+    savePlayingArea,
+    updatePlayingArea
 } from './theGameOfLifeActions';
