@@ -42,5 +42,21 @@ describe('theGameOfLifeReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+    it("should update cells with array passed through the action", () => {
+        const action = { 
+            type: actionTypes.UPDATE_ZOOM,
+            val: 3
+        }
+        const initState = {
+            ...initialState, 
+            zoom: 2
+        }
+        const state = {
+            ...initialState, 
+            zoom: 3
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
    
 });
