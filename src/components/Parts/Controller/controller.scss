@@ -37,3 +37,26 @@ input[type=range]::-webkit-slider-thumb {
     margin-bottom: 2px;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
 }
+
+@media only screen and (max-width: 1200px) {
+    .controller {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 455px;
+        margin: 10px 0 20px 0;
+        .controller-moves {
+            padding: 25px 0 25px 0;
+        }
+        .controler-wrapper {
+            margin: 0 40px 0 40px;
+            z-index: 600;
+            margin: 20px 0 20px 0;
+        }
+        .button-wrapper-small-screen {
+            margin: 10px 0 10px 0;
+        }
+    }
+}

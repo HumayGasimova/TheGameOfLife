@@ -168,16 +168,21 @@ export const Controller = (props) => {
                 onClick={() => setShowDropdown(false)}
                 className={"backdrop-dropdown"}
             />
-            <Button
-                className="controller-button"
-                onClick={toggleNextButton}
-                text={"Next"}
-            />
-            <Button
-                className="controller-button"
-                onClick={() => {toggleCounter(!counterIsRunning)}}
-                text={counterIsRunning ? "Stop" : "Start"}
-            />
+            <div className="button-wrapper-small-screen">
+                <Button
+                    className="controller-button"
+                    onClick={toggleNextButton}
+                    text={"Next"}
+                />
+            </div>
+            <div className="button-wrapper-small-screen">
+                <Button
+                    className="controller-button"
+                    onClick={() => {toggleCounter(!counterIsRunning)}}
+                    text={counterIsRunning ? "Stop" : "Start"}
+                />
+            </div>
+           
             <div className="controller-moves">{count}</div>
             <div className="controler-wrapper">
                 <FontAwesomeIcon icon={faTachometerAlt} size="lg"/>
@@ -199,31 +204,40 @@ export const Controller = (props) => {
                     onChange={()=>props.startZooming(event.target.value)}
                 />
             </div>
-            <Button
-                className="controller-button"
-                onClick={() => setInfoIsShown(true)}
-                text={"Info"}
-            />
-            <Button
-                className="controller-button"
-                onClick={() => toggleAddOptionBox(true)}
-                text={"Add"}
-            />
-             <Button
-                className="controller-button"
-                onClick={deleteHandler}
-                text={"Delete"}
-                disabled={ 
-                    dropdownOption === "Clear" || 
-                    dropdownOption === "Glider" ||
-                    dropdownOption === "Small Exploder" || 
-                    dropdownOption === "Exploder" ||
-                    dropdownOption === "10 Cell Row" || 
-                    dropdownOption === "Lightweight spaceship" ||
-                    dropdownOption === "Tumbler" || 
-                    dropdownOption === "Gosper Glider Gun"
-                }
-            />
+            <div className="button-wrapper-small-screen">
+                <Button
+                    className="controller-button"
+                    onClick={() => setInfoIsShown(true)}
+                    text={"Info"}
+                />
+            </div>
+           
+            <div className="button-wrapper-small-screen">
+                <Button
+                    className="controller-button"
+                    onClick={() => toggleAddOptionBox(true)}
+                    text={"Add"}
+                />
+            </div>
+            
+            <div className="button-wrapper-small-screen">
+                <Button
+                    className="controller-button"
+                    onClick={deleteHandler}
+                    text={"Delete"}
+                    disabled={ 
+                        dropdownOption === "Clear" || 
+                        dropdownOption === "Glider" ||
+                        dropdownOption === "Small Exploder" || 
+                        dropdownOption === "Exploder" ||
+                        dropdownOption === "10 Cell Row" || 
+                        dropdownOption === "Lightweight spaceship" ||
+                        dropdownOption === "Tumbler" || 
+                        dropdownOption === "Gosper Glider Gun"
+                    }
+                />
+            </div>
+             
             {addOptionBoxIsShown ? <AddOptionBox toogleAddOptionBox={() => toggleAddOptionBox(false)}/> : null}
             {infoIsShown ? <InfoGameRules toggleBackdrop={() => setInfoIsShown(false)}/> : null}
         </div>
