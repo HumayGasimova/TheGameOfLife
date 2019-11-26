@@ -2,10 +2,7 @@
 * Libraries
 */
 
-import React,{
-    useState,
-    useEffect
-} from 'react';
+import React from 'react';
  
 import {
     connect
@@ -22,7 +19,9 @@ import {
 /**
 * Components
 */
+
 import Cell from '../../SmallParts/Cell/cell';
+
 /**
 * Styles
 */
@@ -42,35 +41,18 @@ import * as Selectors from '../../../reducers/selectors';
 import * as Actions from '../../../actions';
 
 /**
-* Utility
-*/
-
-import * as Utility from '../../../utility';
-
-/**
-* Hooks
-*/
-
-import { 
-    useInterval 
-} from '../../../Hooks/useInterval';
-
-/**
  * PlayingArea component definition and export
  */
 
 export const PlayingArea = (props) => {
 
- 
-    // const [translation, setTranslation] = useState({ x: 2, y: 2 });
+    /**
+    * Methods
+    */ 
 
     const handleOnClick = (id) => {
         props.makeTheCellAlive(id);
     }
-
-    /**
-    * Methods
-    */ 
 
     const renderCells = () => {
         return(
@@ -99,16 +81,12 @@ export const PlayingArea = (props) => {
             translation={props.translation}
             disableZoom={true}
             disablePan={true}
-            // showControls={true}
-            // onChange={({ scale, translation }, zoom) => mapInteractionCSSOnChange({ scale, translation }, props.zoom)}
         >
             <div className="playingArea">
                 {renderCells()}
             </div>
         </MapInteractionCSS>
-        
     );
-    
 }
 
 export default connect(
@@ -122,8 +100,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            gameInitialization: bindActionCreators(Actions.gameInitialization, dispatch),
-            makeTheCellAlive: bindActionCreators(Actions.makeTheCellAlive, dispatch),
+            makeTheCellAlive: bindActionCreators(Actions.makeTheCellAlive, dispatch)
         };
     }
 )(PlayingArea);

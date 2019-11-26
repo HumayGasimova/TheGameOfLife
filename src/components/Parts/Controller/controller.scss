@@ -12,9 +12,11 @@
         z-index: 600;
     }
 }
+
 input {
     margin: 0 10px 0 10px;
 }
+
 input[type=range] {
     -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
     background: rgb(90, 129, 106);
@@ -22,7 +24,7 @@ input[type=range] {
     height: 7px;
     border-radius: 5px;
     margin-top: 7px;
-  }
+}
   
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;

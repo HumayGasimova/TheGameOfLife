@@ -52,19 +52,12 @@ import * as Selectors from '../../../reducers/selectors';
 import * as Actions from '../../../actions';
 
 /**
-* Utility
-*/
-
-import * as Utility from '../../../utility';
-
-/**
 * Hooks
 */
 
 import {
     useInterval
 } from '../../../Hooks/useInterval';
-
 
 /**
  * Controller component definition and export
@@ -81,7 +74,6 @@ export const Controller = (props) => {
     const [dropdownOption, setDropdownOption] = useState("Clear");
     const [addOptionBoxIsShown, toggleAddOptionBox] = useState(false);
     
-
     /**
     * Methods
     */ 
@@ -147,7 +139,7 @@ export const Controller = (props) => {
         if(confirm("Are you sure you want to delete the project?")){
             props.deleteOption(dropdownOption);
             props.gameInitialization();
-            setDropdownOption("Clear")
+            setDropdownOption("Clear");
         }
     }
 
@@ -207,7 +199,6 @@ export const Controller = (props) => {
                     onChange={()=>props.startZooming(event.target.value)}
                 />
             </div>
-            
             <Button
                 className="controller-button"
                 onClick={() => setInfoIsShown(true)}
@@ -243,21 +234,16 @@ export default connect(
     (state) => {
         return {
             zoom: Selectors.getZoomState(state),
-            dropdownList: Selectors.getDropdownListState(state),
-            
+            dropdownList: Selectors.getDropdownListState(state)
         };
     },
     (dispatch) => {
         return {
-            updateZoom: bindActionCreators(Actions.updateZoom, dispatch),
-            updateMapInteractionCSS: bindActionCreators(Actions.updateMapInteractionCSS, dispatch),
             startZooming: bindActionCreators(Actions.startZooming, dispatch),
             onNextHandler: bindActionCreators(Actions.onNextHandler, dispatch),
             gameInitialization: bindActionCreators(Actions.gameInitialization, dispatch),
-            makeTheCellAlive: bindActionCreators(Actions.makeTheCellAlive, dispatch),
             updatePlayingArea: bindActionCreators(Actions.updatePlayingArea, dispatch),
-            deleteOption: bindActionCreators(Actions.deleteOption, dispatch), 
-            
+            deleteOption: bindActionCreators(Actions.deleteOption, dispatch)
         };
     }
 )(Controller);

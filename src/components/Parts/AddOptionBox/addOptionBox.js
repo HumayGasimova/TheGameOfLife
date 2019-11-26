@@ -14,15 +14,6 @@ import {
     bindActionCreators
 } from 'redux';
 
-import { 
-    FontAwesomeIcon 
-} from '@fortawesome/react-fontawesome';
-
-import { 
-    faTachometerAlt,
-    faThLarge
-} from '@fortawesome/free-solid-svg-icons'
-
 /**
 * Components
 */
@@ -37,35 +28,8 @@ import Backdrop from '../../../library/Backdrop/backdrop';
 import './addOptionBox.scss';
 
 /**
-* Selectors
+* AddOptionBox component definition and export
 */
-
-import * as Selectors from '../../../reducers/selectors';
-
-/**
-* Actions
-*/
-
-import * as Actions from '../../../actions';
-
-/**
-* Utility
-*/
-
-import * as Utility from '../../../utility';
-
-/**
-* Hooks
-*/
-
-import {
-    useInterval
-} from '../../../Hooks/useInterval';
-
-
-/**
- * AddOptionBox component definition and export
- */
 
 export const AddOptionBox = (props) => {
 
@@ -110,15 +74,11 @@ export const AddOptionBox = (props) => {
 }
 
 export default connect(
-    (state) => {
-        return {
-            // zoom: Selectors.getZoomState(state),
-        };
-    },
+   null,
     (dispatch) => {
         return {
             addOption: bindActionCreators(Actions.addOption, dispatch),
-            savePlayingArea: bindActionCreators(Actions.savePlayingArea, dispatch),
+            savePlayingArea: bindActionCreators(Actions.savePlayingArea, dispatch)
         };
     }
 )(AddOptionBox);
