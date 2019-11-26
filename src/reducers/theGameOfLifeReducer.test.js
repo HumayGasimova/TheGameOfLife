@@ -200,7 +200,7 @@ describe('theGameOfLifeReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
-    it("should update alive propertiy of objects with property id given in property aliveCells in the object which property name is equal to the option passed through the action in the playingArea array", () => {
+    it("should update alive property of objects (in cells array) with property id, given in property aliveCells in the object (in the playingArea array) which property name is equal to the value passed through the action", () => {
         const action = { 
             type: actionTypes.UPDATE_PLAYING_AREA,
             option: "My project"
@@ -214,6 +214,25 @@ describe('theGameOfLifeReducer', () => {
             ...initialState, 
             playingArea: [{name: "example", aliveCells: [1, 2, 3]}, {name: "My project", aliveCells: [2,3]}],
             cells: [{id: 1, alive: false}, {id: 2, alive: true}, {id: 3, alive: true}]
+       
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
+    it("should update playingArea and dropdownList arrays by deleting element with property name (playingArea) string (dropdownList) equal to the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.DELETE_OPTION,
+            option: "My project"
+        }
+        const initState = {
+            ...initialState,
+            playingArea: [{name: "example", aliveCells: [1, 2, 3]}, {name: "My project", aliveCells: [2,3]}], 
+            dropdownList: ["example", "My project"]
+        }
+        const state = {
+            ...initialState, 
+            playingArea: [{name: "example", aliveCells: [1, 2, 3]}],
+            dropdownList: ["example"]
        
         }
         expect(reducer(initState, action)).toEqual(state);
