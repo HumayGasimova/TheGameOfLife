@@ -1,4 +1,14 @@
-import { createSelector } from 'reselect';
+/**
+* Libraries
+*/
+
+import { 
+    createSelector 
+} from 'reselect';
+
+/**
+* Selectors
+*/
 
 const getCells = (state) => state.theGameOfLife.cells;
 

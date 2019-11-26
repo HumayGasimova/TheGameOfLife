@@ -50,22 +50,22 @@ class Dropdown extends Component {
     * Methods
     */
     
-   renderDropdown = () => {
-       return(
-           <div className={this.props.dropdownBottomClassName}>
-               {this.props.list.map((el,i) => {
-                   return(
-                        <div 
-                            onClick={() =>this.handleOnClick(el)}
-                            key={i}
-                        >
-                            {el}
-                        </div>
-                   )
-               })}
-           </div>
-       )
-   }
+    renderDropdown = () => {
+        return(
+            <div className={this.props.dropdownBottomClassName}>
+                {this.props.list.map((el,i) => {
+                    return(
+                            <div 
+                                onClick={() =>this.handleOnClick(el)}
+                                key={i}
+                            >
+                                {el}
+                            </div>
+                    )
+                })}
+            </div>
+        )
+    }
 
     /**
     * Markup

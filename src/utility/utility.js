@@ -36,6 +36,7 @@ export const getUpdatedArrayOfCellsTopLine = (array, i) => {
     let arrayOfCells = array;
     let arrayOfLiveCells = [];
     let result;
+
     if(arrayOfCells[i - 1].alive === true){
         arrayOfLiveCells.push(1)
     }
@@ -66,7 +67,6 @@ export const getUpdatedArrayOfCellsTopLine = (array, i) => {
             }
         }
     }
-
     if(arrayOfCells[i].alive === false && arrayOfLiveCells.length === 3){
         result = true;
     }else{
@@ -79,6 +79,7 @@ export const getUpdatedArrayOfCellsTopLine = (array, i) => {
                 result = false;
         }
     }
+
     return result;
 } 
 
@@ -86,6 +87,7 @@ export const getUpdatedArrayOfCellsBottomLine = (array, i) => {
     let arrayOfCells = array;
     let arrayOfLiveCells = [];
     let result;
+
     if(arrayOfCells[i - 1].alive === true){
         arrayOfLiveCells.push(1)
     }
@@ -116,7 +118,6 @@ export const getUpdatedArrayOfCellsBottomLine = (array, i) => {
             }
         }
     }
-
     if(arrayOfCells[i].alive === false){
         if(arrayOfLiveCells.length === 3){
             result = true;
@@ -131,6 +132,7 @@ export const getUpdatedArrayOfCellsBottomLine = (array, i) => {
             }
         }
     }
+
     return result;
 } 
 
@@ -169,7 +171,6 @@ export const getUpdatedArrayOfCellsLeftLine = (array, i) => {
             }
         }
     }
-
     if(arrayOfCells[i].alive === false){
         if(arrayOfLiveCells.length === 3){
             result = true;
@@ -184,6 +185,7 @@ export const getUpdatedArrayOfCellsLeftLine = (array, i) => {
             }
         }
     }
+
     return result;
 } 
 
@@ -222,7 +224,6 @@ export const getUpdatedArrayOfCellsRightLine = (array, i) => {
             }
         }
     }
-
     if(arrayOfCells[i].alive === false){
         if(arrayOfLiveCells.length === 3){
             result = true;
@@ -237,6 +238,7 @@ export const getUpdatedArrayOfCellsRightLine = (array, i) => {
             }
         }
     }
+
     return result;
 } 
 
@@ -287,7 +289,6 @@ export const getUpdatedArrayOfCellsCenter = (array, i) => {
             }
         }
     }
-
     if(arrayOfCells[i].alive === false){
         if(arrayOfLiveCells.length === 3){
             result = true;
@@ -305,5 +306,6 @@ export const getUpdatedArrayOfCellsCenter = (array, i) => {
             }
         }
     }
+    
     return result;
 } 

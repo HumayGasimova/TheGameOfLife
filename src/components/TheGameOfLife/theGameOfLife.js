@@ -29,12 +29,6 @@ import Controller from '../../components/Parts/Controller/controller';
 import './theGameOfLife.scss';
 
 /**
-* Selectors
-*/
-
-import * as Selectors from '../../reducers/selectors';
-
-/**
 * Actions
 */
 
@@ -49,11 +43,10 @@ import {
 } from '../../Hooks/useInterval';
 
 /**
- * TheGameOfLife component definition and export
- */
+* TheGameOfLife component definition and export
+*/
 
 export const TheGameOfLife = (props) => {
-
 
     /**
     * Methods
@@ -81,14 +74,13 @@ export const TheGameOfLife = (props) => {
     * Markup
     */
 
-        return(
-            <div className="theGameOfLife">
-                <Header/>
-                <PlayingArea/>
-                <Controller/>
-            </div>
-        );
-    
+    return(
+        <div className="theGameOfLife">
+            <Header/>
+            <PlayingArea/>
+            <Controller/>
+        </div>
+    );
 }
 
 export default connect(
@@ -101,7 +93,7 @@ export default connect(
         return {
             stateFromLocalStorage: bindActionCreators(Actions.stateFromLocalStorage, dispatch),
             gameInitialization: bindActionCreators(Actions.gameInitialization, dispatch),
-            makeTheCellAlive: bindActionCreators(Actions.makeTheCellAlive, dispatch),
+            makeTheCellAlive: bindActionCreators(Actions.makeTheCellAlive, dispatch)
         };
     }
 )(TheGameOfLife);

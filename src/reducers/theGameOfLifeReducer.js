@@ -9,12 +9,6 @@ import {
 } from './utility';
 
 /**
-* Utility
-*/
-
-import * as Utility from '../utility';
-
-/**
 * Initial State
 */
 
@@ -131,10 +125,12 @@ const addOption = (state, action) => {
     arrayOfAliveCells.map((el,i) => {
         arrayOfIdOfAliveCells.push(el.id)
     })
+    
     updatedPlayingArea.push({
         name: action.option,
         aliveCells: arrayOfIdOfAliveCells
     })
+
     return updateObject(state, {
         playingArea: updatedPlayingArea
     });

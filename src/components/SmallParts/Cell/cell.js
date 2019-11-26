@@ -2,21 +2,11 @@
 * Libraries
 */
 
-import React,{
-    useState
-} from 'react';
+import React from 'react';
  
 import {
     connect
 } from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
-/**
-* Components
-*/
 
 /**
 * Styles
@@ -25,56 +15,22 @@ import {
 import './cell.scss';
 
 /**
-* Selectors
+* Cell component definition and export
 */
-
-import * as Selectors from '../../../reducers/selectors';
-
-/**
-* Actions
-*/
-
-import * as Actions from '../../../actions';
-
-/**
-* Utility
-*/
-
-import * as Utility from '../../../utility';
-
-/**
- * PlayingArea component definition and export
- */
 
 export const Cell = (props) => {
-
-    /**
-    * Methods
-    */ 
 
     /**
     * Markup
     */
 
-        return(
-            <div 
-                className={props.cell.alive ? "cellAlive" : "cell"}
-                onClick={props.onClick}
-            />
-        );
-    
+    return(
+        <div 
+            className={props.cell.alive ? "cellAlive" : "cell"}
+            onClick={props.onClick}
+        />
+    );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // cells: Selectors.getCellsState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // moveCircleXCoordinate: bindActionCreators(Actions.moveCircleXCoordinate, dispatch),
-        };
-    }
-)(Cell);
+export default Cell;
  
