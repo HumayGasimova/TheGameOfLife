@@ -237,4 +237,20 @@ describe('theGameOfLifeReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     });
+
+    it("should update initState with the state passed through the action", () => {
+        const action = { 
+            type: actionTypes.STATE_FROM_LOCAL_STORAGE,
+            state: {a: 4, b: "My project", c: true}
+        }
+        const initState = {
+            ...initialState
+        }
+        const state = {
+            a: 4, 
+            b: "My project", 
+            c: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
 });
