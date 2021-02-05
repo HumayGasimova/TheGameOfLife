@@ -149,7 +149,7 @@ export const Controller = (props) => {
 
     return(
         <div className="controller">
-            <div className="controler-wrapper">
+            <div className="controller-wrapper">
                 <Dropdown 
                     list={props.dropdownList}
                     dropdownClassName={"dropdown-controller"}
@@ -184,7 +184,7 @@ export const Controller = (props) => {
             </div>
            
             <div className="controller-moves">{count}</div>
-            <div className="controler-wrapper">
+            <div className="controller-wrapper">
                 <FontAwesomeIcon icon={faTachometerAlt} size="lg"/>
                 <input 
                     type="range" 
@@ -194,7 +194,7 @@ export const Controller = (props) => {
                     onChange={()=>speedHandler(event)}
                 />
             </div>
-            <div className="controler-wrapper">
+            <div className="controller-wrapper">
                 <FontAwesomeIcon icon={faThLarge} size="lg"/>
                 <input 
                     type="range" 

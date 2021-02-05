@@ -54,11 +54,11 @@ export const TheGameOfLife = (props) => {
 
     useInterval(()=>{
             let jsonStore = JSON.stringify(props.store);
-            localStorage.setItem('store',jsonStore);
+            localStorage.setItem('storeTheGameOfLifeHG',jsonStore);
     },5000)
 
     useEffect(() => {
-        if(JSON.parse(localStorage.getItem('store')) === null){
+        if(JSON.parse(localStorage.getItem('storeTheGameOfLifeHG')) === null){
             props.gameInitialization();
             props.makeTheCellAlive(4728);
             props.makeTheCellAlive(4941);
@@ -66,7 +66,7 @@ export const TheGameOfLife = (props) => {
             props.makeTheCellAlive(5152);
             props.makeTheCellAlive(5151);
         }else{
-            props.stateFromLocalStorage(JSON.parse(localStorage.getItem('store')));
+            props.stateFromLocalStorage(JSON.parse(localStorage.getItem('storeTheGameOfLifeHG')));
         }
     },[])
 
